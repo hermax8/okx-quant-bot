@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-17 (fin de session 1)
+> Dernière mise à jour : 2026-11-17 (session 1, suite)
 
 ## Objectif
 
@@ -12,8 +12,13 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 1 terminée (recherche des stratégies) — en attente de validation de Maxime.**
+**Tâche 2 démarrée : collecteur de données prêt et testé, en attente du dépôt GitHub pour lancer la collecte.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
+
+Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
+2) d'accord pour s'appuyer sur le spot ou une autre plateforme pour compenser l'historique court des X-Perps ;
+3) le compte X-Perps est ouvert. Le classement et les critères de sélection n'ont pas été contestés :
+ils sont considérés comme validés (D-001 à D-004).
 
 ## Étapes (ordre imposé par la Tâche 11)
 
@@ -21,7 +26,7 @@ Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 |---|---|---|
 | 1 | Recherche des stratégies | ✅ Fait (2026-11-17) |
 | 2 | Identification des stratégies prometteuses | ✅ Fait (classement provisoire) |
-| 3 | Collecte des données | ⏳ Bloqué : dépôt GitHub à créer |
+| 3 | Collecte des données | ⏳ Code prêt ; bloqué : dépôt GitHub `okx-quant-bot` à créer |
 | 4 | Premiers backtests | ⬜ |
 | 5 | Comparaison des résultats | ⬜ |
 | 6 | Optimisation raisonnable | ⬜ |
@@ -42,7 +47,16 @@ Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 - Relevé réel des volumes OKX (perpétuels USDT, marché global, 17/11/2026 21:55 UTC) :
   `research/snapshots/2026-11-17_okx_swap_tickers.json`. BTC + ETH = 55 % du volume.
 
-## Décisions proposées (à valider — voir docs/decisions/)
+- Collecteur (`src/okxbot/data/`) : client API publique OKX avec limitation de débit et reprise,
+  bougies en Parquet mensuel, funding, instruments global + EEA, contrôle qualité. 6 tests passent.
+- Workflow `.github/workflows/collect-data.yml` : 5 perpétuels en 1 min (BTC, ETH, SOL, XRP, DOGE)
+  + spot BTC, ETH en 5 min depuis 2020, funding et instruments ; publication sur la branche `data` ;
+  relance quotidienne à 03:17 UTC.
+- Vérifié via l'API réelle : OKX fournit les bougies 1 min de BTC-USDT-SWAP au moins depuis janvier 2020.
+  En revanche, l'historique public du funding ne remonte pas à 2020 (réponse vide pour septembre 2020) :
+  il faudra compléter avec le funding de Binance (data.binance.vision) comme approximation.
+
+## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
 - D-002 Classement : 1) breakout/tendance 15 min–1 h filtré 4 h ; 2) momentum intraday ;
@@ -65,16 +79,15 @@ Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 ## Questions ouvertes pour Maxime
 
-1. Valider ou corriger D-001 à D-004.
-2. Le compte dérivés X-Perps (questionnaire MiFID) est-il ouvert ?
-3. Créer un dépôt GitHub **privé et vide** `okx-quant-bot` et donner l'accès à Claude.
+1. Créer un dépôt GitHub **privé et vide** `okx-quant-bot` (compte hermax8) et donner l'accès à Claude.
 
 ## Prochaine action
 
-Dès validation + dépôt créé : pousser ce dossier, écrire le workflow GitHub Actions de collecte
-(bougies 1 min spot + SWAP 2020→2026 pour BTC, ETH, SOL, XRP, DOGE ; funding ; mark price),
-contrôles qualité, puis premiers backtests des stratégies 1 à 4 (Tâche 2).
+Dès que le dépôt existe : pousser ce dossier, lancer le workflow « Collect market data »,
+vérifier les rapports qualité, ajouter le funding Binance, puis premiers backtests des stratégies 1 à 4.
+Pour reprendre depuis la sauvegarde : `git clone okx-quant-bot.bundle okx-quant-bot`.
 
 ## Journal des sessions
 
 - 2026-11-17 — Session 1 : Tâche 1 (recherche), création du dossier projet et de Git.
+- 2026-11-17 — Session 1 (suite) : validation de Maxime, collecteur de données + workflow GitHub Actions.

@@ -1,0 +1,125 @@
+# Collecte des données de marché OKX (API publique, sans clé).
+# Les données sont publiées sur la branche orpheline `data` (jamais sur main).
+# - Lancement manuel (onglet Actions > Collect market data > Run workflow)
+# - Mise à jour automatique chaque jour à 03:17 UTC (le funding n'est disponible
+#   que sur une fenêtre récente : on l'accumule jour après jour).
+name: Collect market data
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Date de début (AAAA-MM-JJ)"
+        default: "2020-01-01"
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-data
+  cancel-in-progress: false
+
+env:
+  START: ${{ github.event.inputs.start || '2020-01-01' }}
+
+jobs:
+  candles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          # Perpétuels globaux (approximation des X-Perps), 1 minute
+          - { inst: BTC-USDT-SWAP, bar: 1m }
+          - { inst: ETH-USDT-SWAP, bar: 1m }
+          - { inst: SOL-USDT-SWAP, bar: 1m }
+          - { inst: XRP-USDT-SWAP, bar: 1m }
+          - { inst: DOGE-USDT-SWAP, bar: 1m }
+          # Spot (contrôle et repli), 5 minutes
+          - { inst: BTC-USDT, bar: 5m }
+          - { inst: ETH-USDT, bar: 5m }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Récupérer les données déjà collectées (reprise)
+        continue-on-error: true
+        run: |
+          git fetch --depth 1 origin data
+          git checkout origin/data -- "data/raw/okx/candles/${{ matrix.inst }}/${{ matrix.bar }}"
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Télécharger les bougies
+        run: python -m okxbot.data.collect candles --inst ${{ matrix.inst }} --bar ${{ matrix.bar }} --start "$START" | tee "summary_${{ matrix.inst }}_${{ matrix.bar }}.json"
+      - name: Contrôle qualité
+        run: python -m okxbot.data.collect quality --inst ${{ matrix.inst }} --bar ${{ matrix.bar }} | tee "quality_${{ matrix.inst }}_${{ matrix.bar }}.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candles-${{ matrix.inst }}-${{ matrix.bar }}
+          path: |
+            data/raw/okx/candles/${{ matrix.inst }}/${{ matrix.bar }}
+            summary_*.json
+            quality_*.json
+          retention-days: 7
+
+  reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Récupérer le funding déjà accumulé
+        continue-on-error: true
+        run: |
+          git fetch --depth 1 origin data
+          git checkout origin/data -- data/raw/okx/funding
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Instruments (global + EEA, dont X-Perps)
+        run: python -m okxbot.data.collect instruments | tee summary_instruments.json
+      - name: Historique du funding
+        run: |
+          for i in BTC ETH SOL XRP DOGE; do
+            python -m okxbot.data.collect funding --inst $i-USDT-SWAP | tee -a summary_funding.json
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reference
+          path: |
+            data/raw/okx/instruments
+            data/raw/okx/funding
+            summary_*.json
+          retention-days: 7
+
+  publish:
+    needs: [candles, reference]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: artifacts }
+      - name: Publier sur la branche data
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" repo
+          cd repo
+          if git ls-remote --exit-code --heads origin data >/dev/null; then
+            git fetch --depth 1 origin data && git checkout -B data origin/data
+          else
+            git checkout --orphan data && git rm -rf . >/dev/null 2>&1 || true
+            printf "# Branche data\n\nDonnées de marché collectées par GitHub Actions. Ne pas fusionner dans main.\n" > README.md
+          fi
+          mkdir -p data/raw reports/collect
+          for d in ../artifacts/*/; do
+            [ -d "$d/data" ] && cp -r "$d/data/." data/
+            cp "$d"/*.json reports/collect/ 2>/dev/null || true
+          done
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > reports/collect/LAST_RUN.txt
+          git add -A
+          git commit -q -m "Données : collecte du $(date -u +%F)" || echo "Rien de nouveau"
+          git push origin data
