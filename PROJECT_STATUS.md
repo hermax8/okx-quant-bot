@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 démarrée : collecteur de données prêt et testé, en attente du dépôt GitHub pour lancer la collecte.**
+**Tâche 2 en cours : dépôt GitHub hermax8/okx-quant-bot créé (privé), première collecte lancée le 17/11/2026 vers 22:35 UTC.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -26,7 +26,7 @@ ils sont considérés comme validés (D-001 à D-004).
 |---|---|---|
 | 1 | Recherche des stratégies | ✅ Fait (2026-11-17) |
 | 2 | Identification des stratégies prometteuses | ✅ Fait (classement provisoire) |
-| 3 | Collecte des données | ⏳ Code prêt ; bloqué : dépôt GitHub `okx-quant-bot` à créer |
+| 3 | Collecte des données | ⏳ Première collecte en cours (GitHub Actions) |
 | 4 | Premiers backtests | ⬜ |
 | 5 | Comparaison des résultats | ⬜ |
 | 6 | Optimisation raisonnable | ⬜ |
@@ -49,9 +49,10 @@ ils sont considérés comme validés (D-001 à D-004).
 
 - Collecteur (`src/okxbot/data/`) : client API publique OKX avec limitation de débit et reprise,
   bougies en Parquet mensuel, funding, instruments global + EEA, contrôle qualité. 6 tests passent.
-- Workflow `.github/workflows/collect-data.yml` : 5 perpétuels en 1 min (BTC, ETH, SOL, XRP, DOGE)
-  + spot BTC, ETH en 5 min depuis 2020, funding et instruments ; publication sur la branche `data` ;
-  relance quotidienne à 03:17 UTC.
+- Workflow `.github/workflows/collect-data.yml` : perpétuels BTC, ETH en 1 min, SOL, XRP, DOGE en 5 min,
+  spot BTC, ETH en 5 min, depuis 2020 ; funding et instruments ; publication sur la branche `data` ;
+  relance chaque dimanche 03:17 UTC et à chaque modification du collecteur. Budget estimé :
+  ~430 min de GitHub Actions pour la première collecte, ~25 min/semaine ensuite (quota gratuit 2 000 min/mois).
 - Vérifié via l'API réelle : OKX fournit les bougies 1 min de BTC-USDT-SWAP au moins depuis janvier 2020.
   En revanche, l'historique public du funding ne remonte pas à 2020 (réponse vide pour septembre 2020) :
   il faudra compléter avec le funding de Binance (data.binance.vision) comme approximation.
@@ -79,12 +80,12 @@ ils sont considérés comme validés (D-001 à D-004).
 
 ## Questions ouvertes pour Maxime
 
-1. Créer un dépôt GitHub **privé et vide** `okx-quant-bot` (compte hermax8) et donner l'accès à Claude.
+Aucune pour l'instant. Note : Claude ne peut pas lire l'état des exécutions GitHub Actions (pas de jeton API) ;
+il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-Dès que le dépôt existe : pousser ce dossier, lancer le workflow « Collect market data »,
-vérifier les rapports qualité, ajouter le funding Binance, puis premiers backtests des stratégies 1 à 4.
+Vérifier la branche `data` (rapports dans reports/collect/), les rapports qualité, ajouter le funding Binance, puis premiers backtests des stratégies 1 à 4.
 Pour reprendre depuis la sauvegarde : `git clone okx-quant-bot.bundle okx-quant-bot`.
 
 ## Journal des sessions

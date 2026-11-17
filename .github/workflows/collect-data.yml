@@ -1,8 +1,11 @@
 # Collecte des données de marché OKX (API publique, sans clé).
 # Les données sont publiées sur la branche orpheline `data` (jamais sur main).
 # - Lancement manuel (onglet Actions > Collect market data > Run workflow)
-# - Mise à jour automatique chaque jour à 03:17 UTC (le funding n'est disponible
-#   que sur une fenêtre récente : on l'accumule jour après jour).
+# - Lancement automatique quand ce workflow ou le collecteur change sur main
+# - Mise à jour automatique chaque dimanche à 03:17 UTC (le funding n'est disponible
+#   que sur une fenêtre récente : on l'accumule semaine après semaine).
+# Budget : ~430 min pour la première collecte, puis ~25 min par semaine
+# (quota gratuit GitHub pour dépôt privé : 2 000 min/mois).
 name: Collect market data
 
 on:
@@ -11,8 +14,13 @@ on:
       start:
         description: "Date de début (AAAA-MM-JJ)"
         default: "2020-01-01"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/collect-data.yml"
+      - "src/okxbot/data/**"
   schedule:
-    - cron: "17 3 * * *"
+    - cron: "17 3 * * 0"
 
 permissions:
   contents: write
@@ -33,12 +41,14 @@ jobs:
       max-parallel: 4
       matrix:
         include:
-          # Perpétuels globaux (approximation des X-Perps), 1 minute
+          # Perpétuels globaux (approximation des X-Perps)
+          # 1 min pour BTC et ETH (actifs prioritaires, résolution fine des stops),
+          # 5 min pour les autres (suffisant pour des signaux 15 min–1 h, 5x moins de requêtes)
           - { inst: BTC-USDT-SWAP, bar: 1m }
           - { inst: ETH-USDT-SWAP, bar: 1m }
-          - { inst: SOL-USDT-SWAP, bar: 1m }
-          - { inst: XRP-USDT-SWAP, bar: 1m }
-          - { inst: DOGE-USDT-SWAP, bar: 1m }
+          - { inst: SOL-USDT-SWAP, bar: 5m }
+          - { inst: XRP-USDT-SWAP, bar: 5m }
+          - { inst: DOGE-USDT-SWAP, bar: 5m }
           # Spot (contrôle et repli), 5 minutes
           - { inst: BTC-USDT, bar: 5m }
           - { inst: ETH-USDT, bar: 5m }
