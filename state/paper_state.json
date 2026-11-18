@@ -1,0 +1,315 @@
+{
+ "version": 1,
+ "created_ms": 1795020589370,
+ "mode": "actif",
+ "initial_capital": 1000.0,
+ "peak_equity": 1000.0,
+ "t3": {
+  "cash": 499.812292355636,
+  "positions": {
+   "AAVE": {
+    "qty": -0.08611703188965925,
+    "last_px": 106.79
+   },
+   "ADA": {
+    "qty": -118.08987340936862,
+    "last_px": 0.1501
+   },
+   "ARB": {
+    "qty": -22.804328706952717,
+    "last_px": 0.126
+   },
+   "AVAX": {
+    "qty": -0.4532243122131818,
+    "last_px": 6.893
+   },
+   "BCH": {
+    "qty": -0.09721753150996616,
+    "last_px": 204.9
+   },
+   "BNB": {
+    "qty": -0.02816510422874402,
+    "last_px": 577.2
+   },
+   "BTC": {
+    "qty": -0.00030176289050149455,
+    "last_px": 62461.4
+   },
+   "DOGE": {
+    "qty": -347.9676991875508,
+    "last_px": 0.05802
+   },
+   "ETH": {
+    "qty": -0.007898362346081385,
+    "last_px": 1740.65
+   },
+   "FIL": {
+    "qty": -27.86891123110042,
+    "last_px": 0.5697
+   },
+   "ICP": {
+    "qty": -4.66404275982952,
+    "last_px": 2.196
+   },
+   "LINK": {
+    "qty": -1.2638437003787502,
+    "last_px": 8.93
+   },
+   "LTC": {
+    "qty": -0.2895189112040777,
+    "last_px": 43.32
+   },
+   "NEAR": {
+    "qty": -0.7730964165057229,
+    "last_px": 3.201
+   },
+   "OP": {
+    "qty": -173.75474335796073,
+    "last_px": 0.07526
+   },
+   "PEPE": {
+    "qty": 696886.403341937,
+    "last_px": 3.691e-06
+   },
+   "SOL": {
+    "qty": -0.16927603353858772,
+    "last_px": 72.5
+   },
+   "SUI": {
+    "qty": -13.89994619387989,
+    "last_px": 0.7065
+   },
+   "UNI": {
+    "qty": -0.4918203271902127,
+    "last_px": 5.073
+   },
+   "XRP": {
+    "qty": -20.837906611912512,
+    "last_px": 0.9643
+   }
+  },
+  "fees": 0.18770764436397544,
+  "funding": 0.0,
+  "last_rebalance_day": "2026-11-18"
+ },
+ "c1": {
+  "cash": 500.0,
+  "positions": {},
+  "fees": 0.0,
+  "funding": 0.0,
+  "last_selection_day": null
+ },
+ "funding_ts": {},
+ "equity_history": [
+  [
+   1795020609732,
+   999.8122923556359,
+   499.812292355636,
+   500.0
+  ]
+ ],
+ "trades": [
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "AAVE",
+   "prix": 106.79,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0184,
+   "notionnel": -9.2,
+   "frais": 0.0074
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "ADA",
+   "prix": 0.1501,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0355,
+   "notionnel": -17.73,
+   "frais": 0.0142
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "ARB",
+   "prix": 0.126,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0057,
+   "notionnel": -2.87,
+   "frais": 0.0023
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "AVAX",
+   "prix": 6.893,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0062,
+   "notionnel": -3.12,
+   "frais": 0.0025
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "BCH",
+   "prix": 204.9,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0398,
+   "notionnel": -19.92,
+   "frais": 0.0159
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "BNB",
+   "prix": 577.2,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0325,
+   "notionnel": -16.26,
+   "frais": 0.013
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "BTC",
+   "prix": 62461.4,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0377,
+   "notionnel": -18.85,
+   "frais": 0.0151
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "DOGE",
+   "prix": 0.05802,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0404,
+   "notionnel": -20.19,
+   "frais": 0.0162
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "ETH",
+   "prix": 1740.65,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0275,
+   "notionnel": -13.75,
+   "frais": 0.011
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "FIL",
+   "prix": 0.5697,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0318,
+   "notionnel": -15.88,
+   "frais": 0.0127
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "ICP",
+   "prix": 2.196,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0205,
+   "notionnel": -10.24,
+   "frais": 0.0082
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "LINK",
+   "prix": 8.93,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0226,
+   "notionnel": -11.29,
+   "frais": 0.009
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "LTC",
+   "prix": 43.32,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0251,
+   "notionnel": -12.54,
+   "frais": 0.01
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "NEAR",
+   "prix": 3.201,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0049,
+   "notionnel": -2.47,
+   "frais": 0.002
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "OP",
+   "prix": 0.07526,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0262,
+   "notionnel": -13.08,
+   "frais": 0.0105
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "PEPE",
+   "prix": 3.691e-06,
+   "poids_avant": 0.0,
+   "poids_apres": 0.0051,
+   "notionnel": 2.57,
+   "frais": 0.0021
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "SOL",
+   "prix": 72.5,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0245,
+   "notionnel": -12.27,
+   "frais": 0.0098
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "SUI",
+   "prix": 0.7065,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0196,
+   "notionnel": -9.82,
+   "frais": 0.0079
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "UNI",
+   "prix": 5.073,
+   "poids_avant": 0.0,
+   "poids_apres": -0.005,
+   "notionnel": -2.5,
+   "frais": 0.002
+  },
+  {
+   "ts": 1795020625871,
+   "poche": "T3",
+   "actif": "XRP",
+   "prix": 0.9643,
+   "poids_avant": 0.0,
+   "poids_apres": -0.0402,
+   "notionnel": -20.09,
+   "frais": 0.0161
+  }
+ ],
+ "events": [],
+ "tg_offset": 0
+}
