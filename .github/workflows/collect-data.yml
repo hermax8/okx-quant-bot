@@ -52,6 +52,9 @@ jobs:
           # Spot (contrôle et repli), 5 minutes
           - { inst: BTC-USDT, bar: 5m }
           - { inst: ETH-USDT, bar: 5m }
+          # X-Perps (le vrai produit, cotés depuis le 30/03/2026), 1 minute
+          - { inst: BTC-USD_UM_XPERP-310404, bar: 1m, start: "2026-03-01" }
+          - { inst: ETH-USD_UM_XPERP-310404, bar: 1m, start: "2026-03-01" }
     steps:
       - uses: actions/checkout@v4
       - name: Récupérer les données déjà collectées (reprise)
@@ -63,7 +66,7 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -e .
       - name: Télécharger les bougies
-        run: python -m okxbot.data.collect candles --inst ${{ matrix.inst }} --bar ${{ matrix.bar }} --start "$START" | tee "summary_${{ matrix.inst }}_${{ matrix.bar }}.json"
+        run: python -m okxbot.data.collect candles --inst ${{ matrix.inst }} --bar ${{ matrix.bar }} --start "${{ matrix.start || env.START }}" | tee "summary_${{ matrix.inst }}_${{ matrix.bar }}.json"
       - name: Contrôle qualité
         run: python -m okxbot.data.collect quality --inst ${{ matrix.inst }} --bar ${{ matrix.bar }} | tee "quality_${{ matrix.inst }}_${{ matrix.bar }}.json"
       - uses: actions/upload-artifact@v4
@@ -95,12 +98,22 @@ jobs:
           for i in BTC ETH SOL XRP DOGE; do
             python -m okxbot.data.collect funding --inst $i-USDT-SWAP | tee -a summary_funding.json
           done
+          for i in BTC ETH; do
+            python -m okxbot.data.collect funding --inst $i-USD_UM_XPERP-310404 | tee -a summary_funding.json || true
+          done
+      - name: Funding Binance (approximation pour l'historique ancien)
+        continue-on-error: true
+        run: |
+          for s in BTCUSDT ETHUSDT SOLUSDT XRPUSDT DOGEUSDT; do
+            python -m okxbot.data.collect binance-funding --symbol $s | tee -a summary_binance_funding.json
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: reference
           path: |
             data/raw/okx/instruments
             data/raw/okx/funding
+            data/raw/binance
             summary_*.json
           retention-days: 7
 

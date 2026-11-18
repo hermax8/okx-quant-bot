@@ -15,7 +15,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from . import candles, quality, reference
+from . import binance_public, candles, quality, reference
 from .okx_public import EEA_HOST, GLOBAL_HOST, OkxPublicClient
 
 
@@ -35,6 +35,11 @@ def main(argv: list[str] | None = None) -> None:
     f.add_argument("--inst", required=True)
 
     sub.add_parser("instruments")
+
+    b = sub.add_parser("binance-funding")
+    b.add_argument("--symbol", required=True)
+    b.add_argument("--start", default="2020-01-01")
+    b.add_argument("--end", default=pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%d"))
 
     q = sub.add_parser("quality")
     q.add_argument("--inst", required=True)
@@ -62,6 +67,13 @@ def main(argv: list[str] | None = None) -> None:
             "global": reference.dump_instruments(OkxPublicClient(GLOBAL_HOST), ["SPOT", "SWAP", "FUTURES"], d, "global"),
             "eea": reference.dump_instruments(OkxPublicClient(EEA_HOST), ["SPOT", "SWAP", "FUTURES"], d, "eea"),
         }
+    elif a.cmd == "binance-funding":
+        df, missing = binance_public.download_funding(a.symbol, a.start, a.end)
+        path = root / "binance" / "funding" / f"{a.symbol}.parquet"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        df.to_parquet(path, index=False)
+        out = {"symbol": a.symbol, "rows": len(df), "missing_months": missing,
+               "first": pd.to_datetime(df["funding_time"].min(), unit="ms", utc=True).isoformat() if len(df) else None}
     else:
         out = {"inst_id": a.inst, "bar": a.bar, **quality.check(candles.load(root, a.inst, a.bar), a.bar)}
     print(json.dumps(out, indent=1, default=str))
