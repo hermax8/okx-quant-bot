@@ -145,8 +145,18 @@ jobs:
           for i in BTC ETH SOL XRP DOGE; do
             python -m okxbot.data.collect funding --inst $i-USDT-SWAP | tee -a summary_funding.json
           done
-          for i in BTC ETH; do
-            python -m okxbot.data.collect funding --inst $i-USD_UM_XPERP-310404 | tee -a summary_funding.json || true
+          # funding des X-Perps du panier U20 (identifiants lus dans la liste des instruments EEA)
+          python - <<'PY' > xperp_ids.txt
+          import json
+          u20 = "BTC,ETH,SOL,XRP,DOGE,PEPE,NEAR,UNI,SUI,AAVE,FIL,BNB,ADA,LINK,AVAX,BCH,LTC,ICP,ARB,OP".split(",")
+          fut = json.load(open("data/raw/okx/instruments/eea_FUTURES.json"))
+          for x in fut:
+              b = x["instFamily"].split("-")[0]
+              if x.get("ruleType") == "xperp" and x["instFamily"].endswith("_UM_XPERP") and b in u20:
+                  print(x["instId"])
+          PY
+          for i in $(cat xperp_ids.txt); do
+            python -m okxbot.data.collect funding --inst $i | tee -a summary_funding.json || true
           done
       - name: Funding Binance (approximation pour l'historique ancien)
         continue-on-error: true
