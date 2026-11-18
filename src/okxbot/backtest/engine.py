@@ -28,12 +28,13 @@ EXIT_NAMES = {0: "stop", 1: "take-profit", 2: "signal", 3: "durée max", 4: "fin
 @dataclass
 class Costs:
     fee: float = 0.0005          # taker X-Perps, par côté
+    fee_maker: float = 0.0002    # maker X-Perps (ordres limites remplis)
     slip_market: float = 0.0001  # 1 pb sur les ordres au marché (entrées, sorties signal/durée)
     slip_stop: float = 0.0003    # 3 pb sur les stops
     funding_8h: float = 0.0001   # 0,01 % par 8 h, toujours payé (prudent)
 
     def scaled(self, k: float) -> "Costs":
-        return Costs(self.fee * k, self.slip_market * k, self.slip_stop * k, self.funding_8h * k)
+        return Costs(self.fee * k, self.fee_maker * k, self.slip_market * k, self.slip_stop * k, self.funding_8h * k)
 
 
 @dataclass
@@ -49,18 +50,20 @@ class Signals:
     trail_dist: np.ndarray | None = None  # 0 = pas de stop suiveur
     max_hold: int = 10_000
     meta: dict = field(default_factory=dict)
+    limit_px: np.ndarray | None = None  # prix limite d'entrée (0 = au marché), valable une seule bougie
 
 
 @nb.njit(cache=True)
 def _simulate(fo, fh, fl, fc, b_start, b_end, close, entry, stop_dist, tp_dist, exit_l, exit_s, trail,
-              max_hold, slip_m, slip_s):
+              max_hold, slip_m, slip_s, limit_px):
     nbars = len(b_start)
     max_tr = nbars
     t_ein = np.empty(max_tr, np.int64); t_eout = np.empty(max_tr, np.int64)
     t_dir = np.empty(max_tr, np.int8); t_pin = np.empty(max_tr); t_pout = np.empty(max_tr)
     t_risk = np.empty(max_tr); t_reason = np.empty(max_tr, np.int8); t_bin = np.empty(max_tr, np.int64)
+    t_maker = np.zeros(max_tr, np.bool_)
     n = 0
-    pos = 0; pin = 0.0; stop = 0.0; tp = 0.0; ein = 0; bin_ = 0; risk = 0.0
+    pos = 0; pin = 0.0; stop = 0.0; tp = 0.0; ein = 0; bin_ = 0; risk = 0.0; maker = False
     pend_exit = -1  # raison de sortie en attente (à l'ouverture suivante)
     for i in range(1, nbars):
         j0 = b_start[i]; j1 = b_end[i]
@@ -70,18 +73,35 @@ def _simulate(fo, fh, fl, fc, b_start, b_end, close, entry, stop_dist, tp_dist, 
         if pos != 0 and pend_exit >= 0:
             px = fo[j0] * (1.0 - pos * slip_m)
             t_ein[n] = ein; t_eout[n] = j0; t_dir[n] = pos; t_pin[n] = pin; t_pout[n] = px
-            t_risk[n] = risk; t_reason[n] = pend_exit; t_bin[n] = bin_; n += 1
+            t_risk[n] = risk; t_reason[n] = pend_exit; t_bin[n] = bin_; t_maker[n] = maker; n += 1
             pos = 0; pend_exit = -1
+        jstart = j0
         if pos == 0 and entry[i - 1] != 0 and stop_dist[i - 1] > 0 and not np.isnan(stop_dist[i - 1]):
-            pos = entry[i - 1]
-            pin = fo[j0] * (1.0 + pos * slip_m)
-            stop = pin - pos * stop_dist[i - 1]
-            tp = pin + pos * tp_dist[i - 1] if tp_dist[i - 1] > 0 else 0.0
-            risk = stop_dist[i - 1] / pin
-            ein = j0; bin_ = i
+            d = entry[i - 1]
+            lim = limit_px[i - 1]
+            if lim > 0:
+                # ordre limite valable pendant la bougie i : rempli seulement si le prix passe STRICTEMENT
+                # au-delà de la limite (file d'attente pessimiste) ; au prix d'ouverture s'il est meilleur
+                jf = -1
+                for j in range(j0, j1):
+                    if (d == 1 and fl[j] < lim) or (d == -1 and fh[j] > lim):
+                        jf = j
+                        break
+                if jf >= 0:
+                    pos = d; maker = True
+                    pin = min(fo[jf], lim) if d == 1 else max(fo[jf], lim)
+                    jstart = jf
+            else:
+                pos = d; maker = False
+                pin = fo[j0] * (1.0 + pos * slip_m)
+            if pos != 0:
+                stop = pin - pos * stop_dist[i - 1]
+                tp = pin + pos * tp_dist[i - 1] if tp_dist[i - 1] > 0 else 0.0
+                risk = stop_dist[i - 1] / pin
+                ein = jstart; bin_ = i
         # 2) parcours minute par minute
         if pos != 0:
-            for j in range(j0, j1):
+            for j in range(jstart, j1):
                 hit = -1; px = 0.0
                 if pos == 1:
                     if fo[j] <= stop:
@@ -103,7 +123,7 @@ def _simulate(fo, fh, fl, fc, b_start, b_end, close, entry, stop_dist, tp_dist, 
                         hit = EXIT_TP; px = tp
                 if hit >= 0:
                     t_ein[n] = ein; t_eout[n] = j; t_dir[n] = pos; t_pin[n] = pin; t_pout[n] = px
-                    t_risk[n] = risk; t_reason[n] = hit; t_bin[n] = bin_; n += 1
+                    t_risk[n] = risk; t_reason[n] = hit; t_bin[n] = bin_; t_maker[n] = maker; n += 1
                     pos = 0
                     break
         # 3) à la clôture : stop suiveur, sortie sur signal, durée max
@@ -120,8 +140,8 @@ def _simulate(fo, fh, fl, fc, b_start, b_end, close, entry, stop_dist, tp_dist, 
     if pos != 0:
         j = b_end[nbars - 1] - 1
         t_ein[n] = ein; t_eout[n] = j; t_dir[n] = pos; t_pin[n] = pin; t_pout[n] = fc[j]
-        t_risk[n] = risk; t_reason[n] = EXIT_END; t_bin[n] = bin_; n += 1
-    return t_ein[:n], t_eout[:n], t_dir[:n], t_pin[:n], t_pout[:n], t_risk[:n], t_reason[:n], t_bin[:n]
+        t_risk[n] = risk; t_reason[n] = EXIT_END; t_bin[n] = bin_; t_maker[n] = maker; n += 1
+    return t_ein[:n], t_eout[:n], t_dir[:n], t_pin[:n], t_pout[:n], t_risk[:n], t_reason[:n], t_bin[:n], t_maker[:n]
 
 
 def run(fine: pd.DataFrame, sig: Signals, costs: Costs = Costs()) -> pd.DataFrame:
@@ -139,18 +159,20 @@ def run(fine: pd.DataFrame, sig: Signals, costs: Costs = Costs()) -> pd.DataFram
     out = _simulate(fine["open"].to_numpy(), fine["high"].to_numpy(), fine["low"].to_numpy(), closes,
                     b_start, b_end, bar_close, f(sig.entry, np.int8), np.asarray(sig.stop_dist, float),
                     f(sig.tp_dist, float), f(sig.exit_long, np.bool_), f(sig.exit_short, np.bool_),
-                    f(sig.trail_dist, float), int(sig.max_hold), costs.slip_market, costs.slip_stop)
-    ein, eout, d, pin, pout, risk, reason, _ = out
+                    f(sig.trail_dist, float), int(sig.max_hold), costs.slip_market, costs.slip_stop,
+                    f(sig.limit_px, float))
+    ein, eout, d, pin, pout, risk, reason, _, maker = out
     if len(ein) == 0:
         return pd.DataFrame(columns=["entry_time", "exit_time", "dir", "entry_px", "exit_px", "risk_pct",
                                      "reason", "hours", "gross", "net", "R"])
     t_in = fine.index[ein]; t_out = fine.index[eout] + pd.Timedelta(minutes=1)
     hours = (t_out - t_in).total_seconds() / 3600
     gross = d * (pout / pin - 1)
-    net = gross - 2 * costs.fee - costs.funding_8h * hours / 8
+    fee_in = np.where(maker, costs.fee_maker, costs.fee)
+    net = gross - fee_in - costs.fee - costs.funding_8h * hours / 8
     tr = pd.DataFrame({"entry_time": t_in, "exit_time": t_out, "dir": d, "entry_px": pin, "exit_px": pout,
                        "risk_pct": risk, "reason": [EXIT_NAMES[int(r)] for r in reason], "hours": hours,
-                       "gross": gross, "net": net})
+                       "gross": gross, "net": net, "maker_entry": maker})
     tr["R"] = tr["net"] / tr["risk_pct"]
     return tr
 

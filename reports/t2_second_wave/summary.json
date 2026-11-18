@@ -1,0 +1,850 @@
+{
+ "S1b_breakout_4h": {
+  "chosen": [
+   {
+    "test_start": "2021-01-01",
+    "cfg_id": 3,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 2.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-04-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-07-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-10-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-01-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-04-01",
+    "cfg_id": 15,
+    "tf": "4h",
+    "n": 40,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-07-01",
+    "cfg_id": 15,
+    "tf": "4h",
+    "n": 40,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-10-01",
+    "cfg_id": 15,
+    "tf": "4h",
+    "n": 40,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-01-01",
+    "cfg_id": 14,
+    "tf": "4h",
+    "n": 40,
+    "stop_atr": 3.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "market"
+   },
+   {
+    "test_start": "2023-04-01",
+    "cfg_id": 2,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 2.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "market"
+   },
+   {
+    "test_start": "2023-07-01",
+    "cfg_id": 2,
+    "tf": "4h",
+    "n": 20,
+    "stop_atr": 2.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "market"
+   },
+   {
+    "test_start": "2023-10-01",
+    "cfg_id": 10,
+    "tf": "4h",
+    "n": 40,
+    "stop_atr": 2.0,
+    "trail_atr": 4.0,
+    "trend_ema": 50,
+    "max_hold": 18,
+    "entry_mode": "market"
+   }
+  ],
+  "n_configs": 16,
+  "wf_x1": {
+   "trades": 650,
+   "total_return_pct": 54.055469132027454,
+   "cagr_pct": 15.493898250778448,
+   "monthly_mean_pct": 1.0129460148781295,
+   "pct_months_positive": 51.42857142857142,
+   "sharpe": 1.1138526592138895,
+   "sortino": 2.1106273287282113,
+   "max_dd_pct": -17.185179796870088,
+   "win_rate_pct": 40.76923076923077,
+   "profit_factor": 1.3411335098734543,
+   "avg_R": 0.14156337324125667,
+   "avg_win_pct": 0.6825524361567104,
+   "avg_loss_pct": -0.3503072708522592,
+   "share_capped_pct": 0.0,
+   "avg_hours": 55.17253846153845,
+   "trades_per_month": 18.055555555555557,
+   "exposure_pct": NaN,
+   "long_share_pct": 53.84615384615385,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 0.26874867366885047,
+     "total_return_pct": 3.7284447180008895,
+     "trades": 135
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": 0.32523845795034495,
+     "total_return_pct": 4.550150043718881,
+     "trades": 150
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 0.9727504938107181,
+     "total_return_pct": 12.074297560103297,
+     "trades": 136
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": 0.02530068086794014,
+     "total_return_pct": 0.0901026960996143,
+     "trades": 117
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": 1.1231112750746384,
+     "total_return_pct": 27.705359083713276,
+     "trades": 112
+    }
+   },
+   "dsr_all_trials": {
+    "sr_daily": 0.058301712807327384,
+    "sr_annual": 1.113852659213888,
+    "sr0_annual": 1.4338507964864426,
+    "n_trials": 79,
+    "dsr": 0.2584996494841909
+   },
+   "dsr_family": {
+    "sr_daily": 0.058301712807327384,
+    "sr_annual": 1.113852659213888,
+    "sr0_annual": 0.25927010940909967,
+    "n_trials": 16,
+    "dsr": 0.9582277680892914
+   },
+   "by_year": {
+    "2021": {
+     "trades": 256,
+     "sum_R": 53.88603812599492
+    },
+    "2022": {
+     "trades": 196,
+     "sum_R": 18.96606302537916
+    },
+    "2023": {
+     "trades": 198,
+     "sum_R": 19.164091455442748
+    }
+   },
+   "maker_share": 0.6953846153846154,
+   "avg_gross_R": 0.1678789678580622
+  },
+  "wf_x2": {
+   "trades": 650,
+   "total_return_pct": 39.851888025894525,
+   "cagr_pct": 11.829429995617069,
+   "monthly_mean_pct": 0.7387069704840894,
+   "pct_months_positive": 45.714285714285715,
+   "sharpe": 0.8837878495406419,
+   "sortino": 1.608683087010897,
+   "max_dd_pct": -20.554096288784617,
+   "win_rate_pct": 40.0,
+   "profit_factor": 1.2586595005166854,
+   "avg_R": 0.11169970424218471,
+   "avg_win_pct": 0.6794255269402928,
+   "avg_loss_pct": -0.3598672644250413,
+   "share_capped_pct": 0.0,
+   "avg_hours": 55.17133333333332,
+   "trades_per_month": 18.055555555555557,
+   "exposure_pct": NaN,
+   "long_share_pct": 53.84615384615385,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 0.08658585071395343,
+     "total_return_pct": 0.9287138341225187,
+     "trades": 135
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": 0.15782959684117645,
+     "total_return_pct": 1.9823548257854373,
+     "trades": 150
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 0.8501125905461681,
+     "total_return_pct": 10.386872638718426,
+     "trades": 136
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": -0.13807584059221037,
+     "total_return_pct": -1.4675547385917809,
+     "trades": 117
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": 1.0632913991076003,
+     "total_return_pct": 25.952533654805563,
+     "trades": 112
+    }
+   }
+  },
+  "grid": {
+   "sharpe_median_2020_23": 1.2399290172106878,
+   "sharpe_median_2021_23": 1.0780958111924588,
+   "pct_positive_2021_23": 100.0,
+   "sharpe_max_2021_23": 1.305962524840061,
+   "pbo": 0.34285714285714286
+  }
+ },
+ "S2b_momentum_4h": {
+  "chosen": [
+   {
+    "test_start": "2021-01-01",
+    "cfg_id": 17,
+    "tf": "4h",
+    "lookback": 6,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 12,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-04-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "lookback": 3,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-07-01",
+    "cfg_id": 29,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 12,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-10-01",
+    "cfg_id": 29,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 12,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-01-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "lookback": 3,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-04-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "lookback": 3,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-07-01",
+    "cfg_id": 1,
+    "tf": "4h",
+    "lookback": 3,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-10-01",
+    "cfg_id": 7,
+    "tf": "4h",
+    "lookback": 3,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-01-01",
+    "cfg_id": 25,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-04-01",
+    "cfg_id": 25,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 3,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-07-01",
+    "cfg_id": 27,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 6,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-10-01",
+    "cfg_id": 27,
+    "tf": "4h",
+    "lookback": 12,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 6,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   }
+  ],
+  "n_configs": 36,
+  "wf_x1": {
+   "trades": 1339,
+   "total_return_pct": 62.75498915336153,
+   "cagr_pct": 17.628196079289292,
+   "monthly_mean_pct": 1.0279752295688889,
+   "pct_months_positive": 71.42857142857143,
+   "sharpe": 1.485073748585807,
+   "sortino": 2.366521124573396,
+   "max_dd_pct": -12.45297592856035,
+   "win_rate_pct": 48.54368932038835,
+   "profit_factor": 1.308431895464713,
+   "avg_R": 0.07580739169897328,
+   "avg_win_pct": 0.33123835436448784,
+   "avg_loss_pct": -0.2388271140703258,
+   "share_capped_pct": 0.0,
+   "avg_hours": 16.160082150858848,
+   "trades_per_month": 37.19444444444444,
+   "exposure_pct": NaN,
+   "long_share_pct": 57.057505601194926,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 1.2991590446809065,
+     "total_return_pct": 16.378825040848998,
+     "trades": 283
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": 0.4003171030175118,
+     "total_return_pct": 4.474732961825012,
+     "trades": 299
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 1.0399182694925833,
+     "total_return_pct": 11.274604976395297,
+     "trades": 271
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": 0.19397621457500125,
+     "total_return_pct": 1.9738709994865156,
+     "trades": 252
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": 1.092958958843385,
+     "total_return_pct": 18.740251697497044,
+     "trades": 234
+    }
+   },
+   "dsr_all_trials": {
+    "sr_daily": 0.07773231268205408,
+    "sr_annual": 1.485073748585816,
+    "sr0_annual": 1.4338507964864426,
+    "n_trials": 79,
+    "dsr": 0.5412371960180133
+   },
+   "dsr_family": {
+    "sr_daily": 0.07773231268205408,
+    "sr_annual": 1.485073748585816,
+    "sr0_annual": 0.8209769173097157,
+    "n_trials": 36,
+    "dsr": 0.9102866206782789
+   },
+   "by_year": {
+    "2021": {
+     "trades": 315,
+     "sum_R": 28.10688387655771
+    },
+    "2022": {
+     "trades": 587,
+     "sum_R": 20.469658957987164
+    },
+    "2023": {
+     "trades": 437,
+     "sum_R": 52.92955465038034
+    }
+   },
+   "maker_share": 1.0,
+   "avg_gross_R": 0.093199763703552
+  },
+  "wf_x2": {
+   "trades": 1339,
+   "total_return_pct": 42.53625075099632,
+   "cagr_pct": 12.540397212603715,
+   "monthly_mean_pct": 0.6478765220189509,
+   "pct_months_positive": 68.57142857142857,
+   "sharpe": 1.1011382593800974,
+   "sortino": 1.7097017572131157,
+   "max_dd_pct": -15.34719460471149,
+   "win_rate_pct": 47.05003734129948,
+   "profit_factor": 1.2185886883543529,
+   "avg_R": 0.05596258248967192,
+   "avg_win_pct": 0.3315409959708068,
+   "avg_loss_pct": -0.2417544125314145,
+   "share_capped_pct": 0.0,
+   "avg_hours": 16.160082150858848,
+   "trades_per_month": 37.19444444444444,
+   "exposure_pct": NaN,
+   "long_share_pct": 57.057505601194926,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 0.9726147770039665,
+     "total_return_pct": 11.859346778116485,
+     "trades": 283
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": 0.10590345602418405,
+     "total_return_pct": 1.0000804518462747,
+     "trades": 299
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 0.8674209418860847,
+     "total_return_pct": 9.263601898078932,
+     "trades": 271
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": -0.012650966514631374,
+     "total_return_pct": -0.3441202932034315,
+     "trades": 252
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": 0.9816857846995055,
+     "total_return_pct": 16.604842271860676,
+     "trades": 234
+    }
+   }
+  },
+  "grid": {
+   "sharpe_median_2020_23": 1.1283569700437734,
+   "sharpe_median_2021_23": 0.9213867238476898,
+   "pct_positive_2021_23": 100.0,
+   "sharpe_max_2021_23": 1.9774312345406784,
+   "pbo": 0.08571428571428572
+  }
+ },
+ "S2c_momentum_1h_limit": {
+  "chosen": [
+   {
+    "test_start": "2021-01-01",
+    "cfg_id": 5,
+    "tf": "1h",
+    "lookback": 6,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-04-01",
+    "cfg_id": 17,
+    "tf": "1h",
+    "lookback": 12,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-07-01",
+    "cfg_id": 17,
+    "tf": "1h",
+    "lookback": 12,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2021-10-01",
+    "cfg_id": 17,
+    "tf": "1h",
+    "lookback": 12,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-01-01",
+    "cfg_id": 17,
+    "tf": "1h",
+    "lookback": 12,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-04-01",
+    "cfg_id": 8,
+    "tf": "1h",
+    "lookback": 6,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-07-01",
+    "cfg_id": 4,
+    "tf": "1h",
+    "lookback": 6,
+    "z_thr": 1.5,
+    "vol_ratio": 1.2,
+    "hold": 8,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2022-10-01",
+    "cfg_id": 7,
+    "tf": "1h",
+    "lookback": 6,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 8,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-01-01",
+    "cfg_id": 20,
+    "tf": "1h",
+    "lookback": 24,
+    "z_thr": 1.0,
+    "vol_ratio": 1.2,
+    "hold": 16,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-04-01",
+    "cfg_id": 25,
+    "tf": "1h",
+    "lookback": 24,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 8,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-07-01",
+    "cfg_id": 25,
+    "tf": "1h",
+    "lookback": 24,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 8,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   },
+   {
+    "test_start": "2023-10-01",
+    "cfg_id": 25,
+    "tf": "1h",
+    "lookback": 24,
+    "z_thr": 2.0,
+    "vol_ratio": 1.2,
+    "hold": 8,
+    "stop_atr": 2.0,
+    "entry_mode": "limit"
+   }
+  ],
+  "n_configs": 27,
+  "wf_x1": {
+   "trades": 1749,
+   "total_return_pct": 16.58187874055863,
+   "cagr_pct": 5.247151350409429,
+   "monthly_mean_pct": 0.1590568536307597,
+   "pct_months_positive": 51.42857142857142,
+   "sharpe": 0.37643637133578867,
+   "sortino": 0.6436842471346383,
+   "max_dd_pct": -21.210847192646643,
+   "win_rate_pct": 41.45225843339051,
+   "profit_factor": 1.0552997186608082,
+   "avg_R": 0.02335359733650799,
+   "avg_win_pct": 0.5376834444962588,
+   "avg_loss_pct": -0.3607355072910996,
+   "share_capped_pct": 0.05717552887364208,
+   "avg_hours": 10.093996569468269,
+   "trades_per_month": 48.583333333333336,
+   "exposure_pct": NaN,
+   "long_share_pct": 53.91652372784448,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 0.85560699165227,
+     "total_return_pct": 17.269765542291204,
+     "trades": 375
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": 0.37771474445579184,
+     "total_return_pct": 6.689457701672841,
+     "trades": 369
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 0.9884590205452461,
+     "total_return_pct": 16.82954159251051,
+     "trades": 334
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": -0.49831027355975366,
+     "total_return_pct": -9.408313849303262,
+     "trades": 337
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": -0.566751418979842,
+     "total_return_pct": -10.37932190880506,
+     "trades": 334
+    }
+   },
+   "dsr_all_trials": {
+    "sr_daily": 0.01970358020902054,
+    "sr_annual": 0.3764363713357898,
+    "sr0_annual": 1.4338507964864426,
+    "n_trials": 79,
+    "dsr": 0.030543312548760228
+   },
+   "dsr_family": {
+    "sr_daily": 0.01970358020902054,
+    "sr_annual": 0.3764363713357898,
+    "sr0_annual": 1.150822917663324,
+    "n_trials": 27,
+    "dsr": 0.08509781155092394
+   },
+   "by_year": {
+    "2021": {
+     "trades": 482,
+     "sum_R": 50.46972483597857
+    },
+    "2022": {
+     "trades": 779,
+     "sum_R": -21.441463646965154
+    },
+    "2023": {
+     "trades": 488,
+     "sum_R": 11.817180552539055
+    }
+   },
+   "maker_share": 1.0,
+   "avg_gross_R": 0.053057938438021576
+  },
+  "wf_x2": {
+   "trades": 1749,
+   "total_return_pct": -14.483490096896512,
+   "cagr_pct": -5.08169168532805,
+   "monthly_mean_pct": -0.7046957488986417,
+   "pct_months_positive": 42.857142857142854,
+   "sharpe": -0.20989325687625854,
+   "sortino": -0.34263093479237555,
+   "max_dd_pct": -34.167955795910096,
+   "win_rate_pct": 39.908519153802175,
+   "profit_factor": 0.972685988987068,
+   "avg_R": -0.01213248853310859,
+   "avg_win_pct": 0.5408268209050293,
+   "avg_loss_pct": -0.36926510348355573,
+   "share_capped_pct": 0.05717552887364208,
+   "avg_hours": 10.093996569468269,
+   "trades_per_month": 48.583333333333336,
+   "exposure_pct": NaN,
+   "long_share_pct": 53.91652372784448,
+   "per_asset": {
+    "BTC-USDT-SWAP": {
+     "sharpe": 0.36281644897208853,
+     "total_return_pct": 6.6047347175063775,
+     "trades": 375
+    },
+    "ETH-USDT-SWAP": {
+     "sharpe": -0.01728947133628837,
+     "total_return_pct": -0.893833204294403,
+     "trades": 369
+    },
+    "SOL-USDT-SWAP": {
+     "sharpe": 0.7293947491948095,
+     "total_return_pct": 12.012073232330511,
+     "trades": 334
+    },
+    "XRP-USDT-SWAP": {
+     "sharpe": -0.7870767037158239,
+     "total_return_pct": -14.203911709008278,
+     "trades": 337
+    },
+    "DOGE-USDT-SWAP": {
+     "sharpe": -0.7943980349952876,
+     "total_return_pct": -14.300032740078938,
+     "trades": 334
+    }
+   }
+  },
+  "grid": {
+   "sharpe_median_2020_23": 0.36448754135566275,
+   "sharpe_median_2021_23": 0.21161417730301751,
+   "pct_positive_2021_23": 62.96296296296296,
+   "sharpe_max_2021_23": 0.7803824620164357,
+   "pbo": 0.2
+  }
+ },
+ "COMBO_S1b+S2b": {
+  "wf_x1": {
+   "trades": 1989,
+   "total_return_pct": 147.92855408696894,
+   "cagr_pct": 35.34498944006881,
+   "monthly_mean_pct": 2.092745159602026,
+   "pct_months_positive": 57.14285714285714,
+   "sharpe": 1.611485188994063,
+   "sortino": 3.2346807179443116,
+   "max_dd_pct": -18.968177909747965,
+   "win_rate_pct": 46.003016591251885,
+   "profit_factor": 1.323161734669615,
+   "avg_R": 0.09729627455592864,
+   "avg_win_pct": 0.4329850556485741,
+   "avg_loss_pct": -0.2787897401048178,
+   "share_capped_pct": 0.0,
+   "avg_hours": 28.909250879839114,
+   "trades_per_month": 55.25,
+   "exposure_pct": NaN,
+   "long_share_pct": 56.00804424333836,
+   "dsr_all_trials": {
+    "sr_daily": 0.08434898988193042,
+    "sr_annual": 1.6114851889940627,
+    "sr0_annual": 1.4338507964864426,
+    "n_trials": 79,
+    "dsr": 0.647556701473172
+   },
+   "corr_S1b_S2b_daily": 0.25844626081782324
+  }
+ },
+ "_meta": {
+  "n_trials_cumulative": 525,
+  "assets": {
+   "BTC-USDT-SWAP": "1m",
+   "ETH-USDT-SWAP": "1m",
+   "SOL-USDT-SWAP": "5m",
+   "XRP-USDT-SWAP": "5m",
+   "DOGE-USDT-SWAP": "5m"
+  },
+  "dev": [
+   "2020-01-01",
+   "2023-12-31"
+  ]
+ }
+}

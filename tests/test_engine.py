@@ -7,7 +7,7 @@ from okxbot.backtest import engine
 from okxbot.backtest.bars import align_higher, resample
 from okxbot.backtest.engine import Costs, Signals
 
-ZERO = Costs(0, 0, 0, 0)
+ZERO = Costs(0, 0, 0, 0, 0)
 
 
 def fine_from_closes(closes, start="2021-01-01", highs=None, lows=None, opens=None):
@@ -116,3 +116,50 @@ def test_strategies_no_lookahead(name):
     m = len(part.index) - 2   # on exclut la dernière bougie, incomplète dans la version tronquée
     assert np.array_equal(full.entry[:m], part.entry[:m])
     np.testing.assert_allclose(np.nan_to_num(full.stop_dist[:m]), np.nan_to_num(part.stop_dist[:m]))
+
+
+def _limit_sig(fine, lim, d=1):
+    s = sig_on_15m(fine, {0: d}, stop=50, max_hold=1)
+    s.limit_px = np.zeros(len(s.index)); s.limit_px[0] = lim
+    return s
+
+
+def test_limit_entry_needs_strict_cross():
+    closes = np.r_[np.full(15, 100.0), np.full(30, 100.0)]
+    lows = closes.copy(); lows[20] = 99.0          # touche 99 sans passer dessous
+    fine = fine_from_closes(closes, lows=lows)
+    assert engine.run(fine, _limit_sig(fine, 99.0), ZERO).empty
+    lows[20] = 98.9
+    fine = fine_from_closes(closes, lows=lows)
+    tr = engine.run(fine, _limit_sig(fine, 99.0), ZERO)
+    assert len(tr) == 1 and tr.iloc[0]["entry_px"] == 99.0 and tr.iloc[0]["entry_time"] == fine.index[20]
+
+
+def test_limit_entry_cancelled_after_one_bar_and_maker_fee():
+    closes = np.r_[np.full(15, 100.0), np.full(15, 100.0), np.full(15, 90.0)]
+    fine = fine_from_closes(closes)
+    assert engine.run(fine, _limit_sig(fine, 95.0), ZERO).empty   # la baisse arrive une bougie trop tard
+    lows = closes.copy(); lows[16] = 94
+    fine = fine_from_closes(closes, lows=lows)
+    c = Costs(fee=0.0005, fee_maker=0.0002, slip_market=0, slip_stop=0, funding_8h=0)
+    t = engine.run(fine, _limit_sig(fine, 95.0), c).iloc[0]
+    assert bool(t["maker_entry"]) and t["net"] == pytest.approx(t["gross"] - 0.0007)
+
+
+@pytest.mark.parametrize("name", ["S1b_breakout_4h", "S2b_momentum_4h", "S2c_momentum_1h_limit"])
+def test_second_wave_no_lookahead(name):
+    from okxbot.strategies.second_wave import STRATEGIES
+    rng = np.random.default_rng(1)
+    n = 60 * 24 * 120
+    ret = rng.standard_t(4, n) * 0.001
+    c = 100 * np.exp(np.cumsum(ret))
+    fine = fine_from_closes(c, highs=c * (1 + np.abs(ret)), lows=c * (1 - np.abs(ret)))
+    fine["vol_quote"] = rng.lognormal(0, 1, n)
+    fn, grid = STRATEGIES[name]
+    params = {k: v[-1] for k, v in grid.items()}
+    full = fn(fine, **params)
+    cut = fine.index[int(n * 0.7)]
+    part = fn(fine[fine.index < cut], **params)
+    m = len(part.index) - 2
+    assert np.array_equal(full.entry[:m], part.entry[:m])
+    np.testing.assert_allclose(np.nan_to_num(full.limit_px[:m]), np.nan_to_num(part.limit_px[:m]))
