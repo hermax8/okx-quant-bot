@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). Secrets Telegram ajoutés par Maxime (18/11 17:11). Durée de la simulation : moins de 3 mois, Maxime dira quand.**
+**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). Secrets Telegram ajoutés par Maxime (18/11 17:11). Premier cycle simulé OK (18/11, lancé à la main, message Telegram reçu ; T3 : 19 positions courtes + 1 longue, ~0,43x). **Maxime veut passer en réel vers le 25/11/2026** et faire toutes les améliorations possibles d'ici là.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -122,8 +122,13 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-2. Claude : vérifier les premiers cycles sur la branche `paper`, corriger si besoin.
-3. Revue de la simulation chaque semaine ; fin de la simulation à la date choisie par Maxime (moins de 3 mois).
+Plan de la semaine avant le réel (questions posées à Maxime le 18/11 : montant, serveur à IP fixe, sous-compte OKX) :
+1. Module d'exécution réelle OKX Europe (requêtes signées, X-Perps, arrondis aux tailles minimales, identifiants
+   d'ordre uniques, réconciliation avec le compte, exécutions partielles) + mode « à blanc » en parallèle de la simulation.
+2. Stops de protection posés chez OKX (protègent même si le bot tombe).
+3. Hébergement à IP fixe (petit serveur) : une clé OKX avec droit de trading non liée à une IP est supprimée après 14 jours.
+4. Sous-compte OKX dédié au bot, clé Lecture + Trading, sans retrait, liée à l'IP du serveur.
+5. Telegram sur le vrai compte, alertes d'échec d'ordre ; puis tableau de bord et analyse bihebdomadaire.
 
 ## Journal des sessions
 
@@ -136,3 +141,4 @@ il vérifie le résultat via la branche `data`.
 - 2026-11-18 — Délégation à Claude ; analyse du risque ; D-008 ; test scellé v0.2 : échec.
 - 2026-11-18 — Accord multi-jours + simulation ; D-009 ; collecte U20 ; T3 : échec.
 - 2026-11-18 — D-010 portage C1 : échec de justesse ; D-011 bot en simulation (GitHub Actions + Telegram).
+- 2026-11-18 — Premier cycle simulé OK ; Maxime vise le réel dans une semaine.
