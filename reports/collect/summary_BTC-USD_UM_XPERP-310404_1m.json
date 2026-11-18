@@ -1,11 +1,11 @@
 {
  "inst_id": "BTC-USD_UM_XPERP-310404",
  "bar": "1m",
- "months": 8,
- "skipped": 0,
- "rows": 333160,
+ "months": 1,
+ "skipped": 7,
+ "rows": 25378,
  "empty_months": [
   "2026-03"
  ],
- "requests": 3337
+ "requests": 255
 }

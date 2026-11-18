@@ -5264,7 +5264,7 @@
   "instId": "BICO-USDT-SWAP",
   "instIdCode": 48267,
   "instType": "SWAP",
-  "lever": "4.88",
+  "lever": "10",
   "listTime": "1639032617371",
   "longPosRemainingQuota": "",
   "lotSz": "1",
