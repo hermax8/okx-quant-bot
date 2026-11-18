@@ -31,6 +31,12 @@ def main(argv: list[str] | None = None) -> None:
     c.add_argument("--start", default="2020-01-01")
     c.add_argument("--end", default=pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%d"))
 
+    cm = sub.add_parser("candles-many")
+    cm.add_argument("--insts", required=True, help="liste séparée par des virgules")
+    cm.add_argument("--bar", default="4H")
+    cm.add_argument("--start", default="2020-01-01")
+    cm.add_argument("--end", default=pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%d"))
+
     f = sub.add_parser("funding")
     f.add_argument("--inst", required=True)
 
@@ -52,6 +58,15 @@ def main(argv: list[str] | None = None) -> None:
 
     if a.cmd == "candles":
         out = candles.download(client, a.inst, a.bar, a.start, a.end, root)
+    elif a.cmd == "candles-many":
+        out = []
+        for inst in a.insts.split(","):
+            try:
+                summ = candles.download(client, inst, a.bar, a.start, a.end, root)
+                out.append({**summ, **quality.check(candles.load(root, inst, a.bar), a.bar)})
+            except Exception as exc:  # un actif en erreur ne bloque pas les autres
+                logging.exception("%s en erreur", inst)
+                out.append({"inst_id": inst, "error": repr(exc)})
     elif a.cmd == "funding":
         df = reference.fetch_funding_history(client, a.inst)
         path = root / "okx" / "funding" / f"{a.inst}.parquet"

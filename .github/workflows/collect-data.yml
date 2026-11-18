@@ -87,6 +87,44 @@ jobs:
             log_*.txt
           retention-days: 7
 
+  candles_4h:
+    # Panier élargi (D-009) : 20 cryptos disponibles en X-Perps, cotées avant juillet 2023, bougies 4 h
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      U20: BTC,ETH,SOL,XRP,DOGE,PEPE,NEAR,UNI,SUI,AAVE,FIL,BNB,ADA,LINK,AVAX,BCH,LTC,ICP,ARB,OP
+    steps:
+      - uses: actions/checkout@v4
+      - name: Récupérer les données déjà collectées (reprise)
+        continue-on-error: true
+        run: |
+          git fetch --depth 1 origin +refs/heads/data:refs/remotes/origin/data
+          for b in ${U20//,/ }; do git checkout origin/data -- "data/raw/okx/candles/$b-USDT-SWAP/4H" 2>/dev/null || true; done
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Télécharger les bougies 4 h
+        run: |
+          insts=$(echo "$U20" | sed 's/\([A-Z0-9]*\)/\1-USDT-SWAP/g')
+          python -m okxbot.data.collect candles-many --insts "$insts" --bar 4H --start "$START" > summary_candles_4h.json 2> log_candles_4h.txt
+          rc=$?; cat summary_candles_4h.json | head -c 3000; tail -20 log_candles_4h.txt; exit $rc
+      - name: Funding Binance du panier élargi
+        continue-on-error: true
+        run: |
+          for b in ${U20//,/ }; do
+            python -m okxbot.data.collect binance-funding --symbol ${b}USDT >> summary_binance_funding_u20.json || true
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: candles-4h-u20
+          path: |
+            data/raw/okx/candles/*/4H
+            data/raw/binance
+            summary_*.json
+            log_*.txt
+          retention-days: 7
+
   reference:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -127,7 +165,7 @@ jobs:
           retention-days: 7
 
   publish:
-    needs: [candles, reference]
+    needs: [candles, candles_4h, reference]
     if: always()
     runs-on: ubuntu-latest
     steps:
