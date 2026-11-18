@@ -8,3 +8,5 @@
 | D-004 | 2026-11-17 | Données : API OKX via GitHub Actions ; découpage dev 2020–2023 / validation 2024–oct. 2025 / test scellé nov. 2025–nov. 2026 | Validée (2026-11-17) |
 
 Statuts : Proposée → Validée (par Maxime) → Remplacée.
+| D-005 | 2026-11-18 | Abandon de S3 (squeeze) et S4 (retour à la moyenne 15 min) après la vague 1 | Proposée |
+| D-006 | 2026-11-18 | Vague 2 limitée à S1 et S2 : horizon plus long, entrées maker, combinaison, extension aux altcoins | Proposée |

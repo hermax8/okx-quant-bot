@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-18 (vérification de la collecte)
+> Dernière mise à jour : 2026-11-18 (premiers backtests, vague 1)
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 en cours : première collecte terminée (18/11/2026 00:32 UTC), données complètes et propres. Prochaine étape : premiers backtests, après en avoir informé Maxime.**
+**Tâche 2 en cours : vague 1 de backtests terminée — aucune stratégie ne passe les critères ; S3 et S4 abandonnées (proposé), S1 et S2 à retravailler en vague 2 (en attente de l'accord de Maxime).**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -27,8 +27,8 @@ ils sont considérés comme validés (D-001 à D-004).
 | 1 | Recherche des stratégies | ✅ Fait (2026-11-17) |
 | 2 | Identification des stratégies prometteuses | ✅ Fait (classement provisoire) |
 | 3 | Collecte des données | ✅ Fait (2026-11-18), complément X-Perps + funding Binance lancé |
-| 4 | Premiers backtests | ⬜ |
-| 5 | Comparaison des résultats | ⬜ |
+| 4 | Premiers backtests | ✅ Vague 1 faite (2026-11-18) |
+| 5 | Comparaison des résultats | ⏳ Vague 1 comparée ; vague 2 à faire |
 | 6 | Optimisation raisonnable | ⬜ |
 | 7 | Validation statistique | ⬜ |
 | 8 | Présentation de la stratégie finale | ⬜ |
@@ -62,6 +62,12 @@ ils sont considérés comme validés (D-001 à D-004).
   BTC X-Perp = BTC-USD_UM_XPERP-310404, contrat 0,0001 BTC, minimum 1 contrat.
 - Funding OKX limité aux 3 derniers mois via l'API → ajout du funding Binance depuis 2020.
 
+- Vague 1 (`docs/research/2026-11-18_T2_premiers_backtests.md`) : moteur événementiel numba
+  (stops minute par minute, pire cas, frais, slippage, funding, sans levier), 65 configs × 2 actifs,
+  walk-forward 2021–2023. Sharpe OOS : S1 -0,03 ; S2 0,55 ; S3 -0,46 ; S4 -3,36. Tout négatif avec coûts x2.
+  Les frais mangent la moitié de l'avantage brut. 19 tests passent.
+- Bug corrigé : unités ms/ns dans le moteur (trades sans fin) — test de régression ajouté.
+
 ## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
@@ -90,12 +96,13 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-Vérifier le complément (X-Perps 1 min, funding Binance) sur la branche `data`, comparer X-Perps et perpétuels globaux,
-puis premiers backtests des stratégies 1 à 4 sur la période de développement (2020–2023).
-Pour reprendre depuis la sauvegarde : `git clone okx-quant-bot.bundle okx-quant-bot`.
+Attendre l'accord de Maxime sur la vague 2 : signaux 4 h / durées plus longues, entrées limites (maker),
+combinaison S1+S2, extension à SOL/XRP/DOGE. Vérifier aussi pourquoi la collecte complémentaire
+(X-Perps, funding Binance) n'a rien publié sur la branche `data` (onglet Actions à consulter).
 
 ## Journal des sessions
 
 - 2026-11-17 — Session 1 : Tâche 1 (recherche), création du dossier projet et de Git.
 - 2026-11-17 — Session 1 (suite) : validation de Maxime, collecteur de données + workflow GitHub Actions.
 - 2026-11-18 — Vérification de la première collecte, ajout X-Perps et funding Binance.
+- 2026-11-18 — Vague 1 de backtests (4 stratégies, BTC/ETH, 2020–2023).

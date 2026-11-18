@@ -1,0 +1,12 @@
+{
+ "BTC-USDT-SWAP": {
+  "total_return_pct": 44.195393678239284,
+  "max_dd_pct": -76.65028843152137,
+  "sharpe": 0.5125593646998228
+ },
+ "ETH-USDT-SWAP": {
+  "total_return_pct": 213.05283945199466,
+  "max_dd_pct": -79.32922001408976,
+  "sharpe": 0.8741394365579335
+ }
+}

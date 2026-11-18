@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: okxbot
+Version: 0.1.0
+Summary: Bot de trading intraday OKX : collecte, recherche, backtests
+Requires-Python: >=3.11
+Requires-Dist: requests>=2.31
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy>=1.26
+Requires-Dist: pyarrow>=15
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
