@@ -30,6 +30,96 @@
 }
 {
  "inst_id": "ETH-USD_UM_XPERP-310404",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "SOL-USD_UM_XPERP-310404",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "DOGE-USD_UM_XPERP-310404",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "XRP-USD_UM_XPERP-310404",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "BCH-USD_UM_XPERP-310530",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "AAVE-USD_UM_XPERP-310704",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "ADA-USD_UM_XPERP-310404",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "ARB-USD_UM_XPERP-310815",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "AVAX-USD_UM_XPERP-310530",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "BNB-USD_UM_XPERP-310523",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "FIL-USD_UM_XPERP-310718",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "ICP-USD_UM_XPERP-310711",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "LINK-USD_UM_XPERP-310523",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "LTC-USD_UM_XPERP-310404",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "NEAR-USD_UM_XPERP-310613",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "OP-USD_UM_XPERP-310815",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "PEPE-USD_UM_XPERP-310404",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "SUI-USD_UM_XPERP-310404",
+ "rows": 279,
+ "first": "2026-08-17T16:00:00+00:00"
+}
+{
+ "inst_id": "UNI-USD_UM_XPERP-310718",
  "rows": 279,
  "first": "2026-08-17T16:00:00+00:00"
 }

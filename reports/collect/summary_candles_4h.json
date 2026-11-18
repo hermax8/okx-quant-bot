@@ -2,11 +2,11 @@
  {
   "inst_id": "BTC-USDT-SWAP",
   "bar": "4H",
-  "months": 83,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 82,
   "rows": 15081,
   "empty_months": [],
-  "requests": 166,
+  "requests": 2,
   "first": "2020-01-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -22,11 +22,11 @@
  {
   "inst_id": "ETH-USDT-SWAP",
   "bar": "4H",
-  "months": 83,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 82,
   "rows": 15081,
   "empty_months": [],
-  "requests": 332,
+  "requests": 4,
   "first": "2020-01-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -42,8 +42,8 @@
  {
   "inst_id": "SOL-USDT-SWAP",
   "bar": "4H",
-  "months": 71,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 70,
   "rows": 12758,
   "empty_months": [
    "2020-01",
@@ -59,7 +59,7 @@
    "2020-11",
    "2020-12"
   ],
-  "requests": 486,
+  "requests": 18,
   "first": "2021-01-22T04:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -75,11 +75,11 @@
  {
   "inst_id": "XRP-USDT-SWAP",
   "bar": "4H",
-  "months": 83,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 82,
   "rows": 15081,
   "empty_months": [],
-  "requests": 652,
+  "requests": 20,
   "first": "2020-01-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -95,8 +95,8 @@
  {
   "inst_id": "DOGE-USDT-SWAP",
   "bar": "4H",
-  "months": 77,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 76,
   "rows": 13935,
   "empty_months": [
    "2020-01",
@@ -106,7 +106,7 @@
    "2020-05",
    "2020-06"
   ],
-  "requests": 813,
+  "requests": 28,
   "first": "2020-07-10T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -122,8 +122,8 @@
  {
   "inst_id": "PEPE-USDT-SWAP",
   "bar": "4H",
-  "months": 43,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 42,
   "rows": 7773,
   "empty_months": [
    "2020-01",
@@ -167,7 +167,7 @@
    "2023-03",
    "2023-04"
   ],
-  "requests": 940,
+  "requests": 70,
   "first": "2023-05-03T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -183,8 +183,8 @@
  {
   "inst_id": "NEAR-USDT-SWAP",
   "bar": "4H",
-  "months": 72,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 71,
   "rows": 12949,
   "empty_months": [
    "2020-01",
@@ -199,7 +199,7 @@
    "2020-10",
    "2020-11"
   ],
-  "requests": 1095,
+  "requests": 83,
   "first": "2020-12-21T08:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -215,8 +215,8 @@
  {
   "inst_id": "UNI-USDT-SWAP",
   "bar": "4H",
-  "months": 75,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 74,
   "rows": 13520,
   "empty_months": [
    "2020-01",
@@ -228,7 +228,7 @@
    "2020-07",
    "2020-08"
   ],
-  "requests": 1253,
+  "requests": 93,
   "first": "2020-09-17T04:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -244,8 +244,8 @@
  {
   "inst_id": "SUI-USDT-SWAP",
   "bar": "4H",
-  "months": 43,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 42,
   "rows": 7761,
   "empty_months": [
    "2020-01",
@@ -289,7 +289,7 @@
    "2023-03",
    "2023-04"
   ],
-  "requests": 1380,
+  "requests": 135,
   "first": "2023-05-05T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -305,8 +305,8 @@
  {
   "inst_id": "AAVE-USDT-SWAP",
   "bar": "4H",
-  "months": 72,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 71,
   "rows": 13016,
   "empty_months": [
    "2020-01",
@@ -321,7 +321,7 @@
    "2020-10",
    "2020-11"
   ],
-  "requests": 1536,
+  "requests": 148,
   "first": "2020-12-10T04:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -337,8 +337,8 @@
  {
   "inst_id": "FIL-USDT-SWAP",
   "bar": "4H",
-  "months": 77,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 76,
   "rows": 13867,
   "empty_months": [
    "2020-01",
@@ -348,7 +348,7 @@
    "2020-05",
    "2020-06"
   ],
-  "requests": 1696,
+  "requests": 156,
   "first": "2020-07-21T08:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -364,8 +364,8 @@
  {
   "inst_id": "BNB-USDT-SWAP",
   "bar": "4H",
-  "months": 48,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 47,
   "rows": 8558,
   "empty_months": [
    "2020-01",
@@ -404,7 +404,7 @@
    "2022-10",
    "2022-11"
   ],
-  "requests": 1827,
+  "requests": 193,
   "first": "2022-12-23T04:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -420,14 +420,14 @@
  {
   "inst_id": "ADA-USDT-SWAP",
   "bar": "4H",
-  "months": 81,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 80,
   "rows": 14665,
   "empty_months": [
    "2020-01",
    "2020-02"
   ],
-  "requests": 1992,
+  "requests": 197,
   "first": "2020-03-10T08:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -443,14 +443,14 @@
  {
   "inst_id": "LINK-USDT-SWAP",
   "bar": "4H",
-  "months": 81,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 80,
   "rows": 14689,
   "empty_months": [
    "2020-01",
    "2020-02"
   ],
-  "requests": 2157,
+  "requests": 201,
   "first": "2020-03-06T08:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -466,8 +466,8 @@
  {
   "inst_id": "AVAX-USDT-SWAP",
   "bar": "4H",
-  "months": 75,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 74,
   "rows": 13484,
   "empty_months": [
    "2020-01",
@@ -479,7 +479,7 @@
    "2020-07",
    "2020-08"
   ],
-  "requests": 2315,
+  "requests": 211,
   "first": "2020-09-23T04:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -495,11 +495,11 @@
  {
   "inst_id": "BCH-USDT-SWAP",
   "bar": "4H",
-  "months": 83,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 82,
   "rows": 15081,
   "empty_months": [],
-  "requests": 2481,
+  "requests": 213,
   "first": "2020-01-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -515,11 +515,11 @@
  {
   "inst_id": "LTC-USDT-SWAP",
   "bar": "4H",
-  "months": 83,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 82,
   "rows": 15081,
   "empty_months": [],
-  "requests": 2647,
+  "requests": 215,
   "first": "2020-01-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -535,8 +535,8 @@
  {
   "inst_id": "ICP-USDT-SWAP",
   "bar": "4H",
-  "months": 67,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 66,
   "rows": 12085,
   "empty_months": [
    "2020-01",
@@ -556,7 +556,7 @@
    "2021-03",
    "2021-04"
   ],
-  "requests": 2798,
+  "requests": 233,
   "first": "2021-05-14T08:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -572,8 +572,8 @@
  {
   "inst_id": "ARB-USDT-SWAP",
   "bar": "4H",
-  "months": 45,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 44,
   "rows": 8016,
   "empty_months": [
    "2020-01",
@@ -615,7 +615,7 @@
    "2023-01",
    "2023-02"
   ],
-  "requests": 2926,
+  "requests": 273,
   "first": "2023-03-23T12:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
@@ -631,8 +631,8 @@
  {
   "inst_id": "OP-USDT-SWAP",
   "bar": "4H",
-  "months": 54,
-  "skipped": 0,
+  "months": 1,
+  "skipped": 53,
   "rows": 9789,
   "empty_months": [
    "2020-01",
@@ -665,7 +665,7 @@
    "2022-04",
    "2022-05"
   ],
-  "requests": 3063,
+  "requests": 304,
   "first": "2022-06-01T00:00:00+00:00",
   "last": "2026-11-18T08:00:00+00:00",
   "coverage_pct": 100.0,
