@@ -10,5 +10,5 @@ Accord de Maxime (2026-11-18, 16:40). Aucune stratégie n'a passé ses critères
   hebdomadaires ; pour du réel, un serveur dédié serait nécessaire (stops côté OKX, réactivité).
 - Garde-fous codés hors stratégie : modes actif / stop / pause, kill switch Telegram, coupe-circuit à -25 %,
   seul le chat Telegram autorisé est obéi.
-- Bilan prévu : point hebdomadaire automatique ; revue complète après 3 mois de simulation (février 2027).
+- Bilan : point hebdomadaire automatique. Durée de la simulation : moins de 3 mois, fixée par Maxime (18/11).
   Le passage au réel reste une décision explicite de Maxime.

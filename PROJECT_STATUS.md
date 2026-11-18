@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). En attente : secrets Telegram à ajouter par Maxime.**
+**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). Secrets Telegram ajoutés par Maxime (18/11 17:11). Durée de la simulation : moins de 3 mois, Maxime dira quand.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -34,7 +34,7 @@ ils sont considérés comme validés (D-001 à D-004).
 | 8 | Présentation de la stratégie finale | ⬜ |
 | 9 | Validation par Maxime | ⬜ |
 | 10 | Développement du bot | ⏳ Version simulation (D-011), 35 tests |
-| 11 | Connexion Telegram | ⏳ Code prêt, secrets à ajouter |
+| 11 | Connexion Telegram | ✅ Secrets ajoutés (2026-11-18) |
 | 12 | Connexion OKX | ⬜ |
 | 13 | Paper trading | ⏳ Démarre au prochain créneau de 4 h |
 | 14 | Validation en conditions réelles simulées | ⬜ |
@@ -122,9 +122,8 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-1. Maxime : créer un bot Telegram dédié et ajouter les secrets `TELEGRAM_BOT_TOKEN` et `TELEGRAM_CHAT_ID` au dépôt.
 2. Claude : vérifier les premiers cycles sur la branche `paper`, corriger si besoin.
-3. Revue de la simulation chaque semaine ; bilan complet en février 2027.
+3. Revue de la simulation chaque semaine ; fin de la simulation à la date choisie par Maxime (moins de 3 mois).
 
 ## Journal des sessions
 
