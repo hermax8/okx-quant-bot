@@ -91,6 +91,9 @@ ils sont considérés comme validés (D-001 à D-004).
 - T3 (`docs/research/2026-11-18_T3_tendance_multi_jours.md`) : règles figées D-009, ÉCHEC (3/6 années positives,
   DD -58 %, shorts perdants sur la période complète, +20 % sur les 12 derniers mois).
 
+- C1 portage du funding (`docs/research/2026-11-18_C1_portage_funding.md`) : D-010, ÉCHEC de justesse
+  (CAGR 7,5 %, Sharpe 5,8, DD -1 %, mais 0 % sur 12 mois : rien à porter depuis 2025).
+
 ## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
