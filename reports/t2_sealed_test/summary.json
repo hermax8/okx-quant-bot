@@ -1,0 +1,156 @@
+{
+ "chosen": [
+  {
+   "test_start": "2025-11-01",
+   "cfg_id": 4,
+   "tf": "4h",
+   "lookback": 3,
+   "z_thr": 1.0,
+   "vol_ratio": 1.2,
+   "hold": 12,
+   "stop_atr": 2.0,
+   "entry_mode": "market"
+  },
+  {
+   "test_start": "2026-01-01",
+   "cfg_id": 5,
+   "tf": "4h",
+   "lookback": 3,
+   "z_thr": 1.0,
+   "vol_ratio": 1.2,
+   "hold": 12,
+   "stop_atr": 2.0,
+   "entry_mode": "limit"
+  },
+  {
+   "test_start": "2026-04-01",
+   "cfg_id": 7,
+   "tf": "4h",
+   "lookback": 3,
+   "z_thr": 1.5,
+   "vol_ratio": 1.2,
+   "hold": 3,
+   "stop_atr": 2.0,
+   "entry_mode": "limit"
+  },
+  {
+   "test_start": "2026-07-01",
+   "cfg_id": 35,
+   "tf": "4h",
+   "lookback": 12,
+   "z_thr": 1.5,
+   "vol_ratio": 1.2,
+   "hold": 12,
+   "stop_atr": 2.0,
+   "entry_mode": "limit"
+  },
+  {
+   "test_start": "2026-10-01",
+   "cfg_id": 17,
+   "tf": "4h",
+   "lookback": 6,
+   "z_thr": 1.0,
+   "vol_ratio": 1.2,
+   "hold": 12,
+   "stop_atr": 2.0,
+   "entry_mode": "limit"
+  }
+ ],
+ "x1": {
+  "trades": 430,
+  "skipped_by_cap": 0,
+  "total_return_pct": -2.7373517436041994,
+  "sharpe": 0.10869074785281536,
+  "sortino": 0.1729900667029502,
+  "max_dd_pct": -31.108061484210836,
+  "profit_factor": 1.0006065807328466,
+  "win_rate_pct": 41.86046511627907,
+  "avg_hours": 30.346472868217056,
+  "max_notional_x": 2.311304352738803,
+  "avg_notional_x_when_open": 0.7244906898591947,
+  "funding_cost_pct_of_pnl": null,
+  "monthly_returns_pct": {
+   "2025-11": 10.43,
+   "2025-12": -23.26,
+   "2026-01": 18.96,
+   "2026-02": -4.69,
+   "2026-03": -9.41,
+   "2026-04": -6.71,
+   "2026-05": -2.3,
+   "2026-06": 0.36,
+   "2026-07": -2.21,
+   "2026-08": 33.39,
+   "2026-09": -11.97,
+   "2026-10": -1.69,
+   "2026-11": 8.23
+  },
+  "profit_share_by_asset_pct": {
+   "BTC-USDT-SWAP": 1852.2,
+   "DOGE-USDT-SWAP": -9215.9,
+   "ETH-USDT-SWAP": 14626.5,
+   "SOL-USDT-SWAP": -10810.8,
+   "XRP-USDT-SWAP": 3648.1
+  },
+  "long_share_pct": 42.7906976744186
+ },
+ "x2": {
+  "trades": 430,
+  "skipped_by_cap": 0,
+  "total_return_pct": -16.381691017485466,
+  "sharpe": -0.2692607864575669,
+  "sortino": -0.41308376025935795,
+  "max_dd_pct": -38.03900401418815,
+  "profit_factor": 0.9156849930902654,
+  "win_rate_pct": 40.46511627906977,
+  "avg_hours": 30.344961240310077,
+  "max_notional_x": 2.311304352738803,
+  "avg_notional_x_when_open": 0.7246063188781986,
+  "funding_cost_pct_of_pnl": null,
+  "monthly_returns_pct": {
+   "2025-11": 9.27,
+   "2025-12": -25.19,
+   "2026-01": 16.56,
+   "2026-02": -5.52,
+   "2026-03": -10.72,
+   "2026-04": -8.09,
+   "2026-05": -3.73,
+   "2026-06": -1.09,
+   "2026-07": -2.35,
+   "2026-08": 32.54,
+   "2026-09": -12.58,
+   "2026-10": -2.29,
+   "2026-11": 7.52
+  },
+  "profit_share_by_asset_pct": {
+   "BTC-USDT-SWAP": 13.8,
+   "DOGE-USDT-SWAP": 78.4,
+   "ETH-USDT-SWAP": -79.9,
+   "SOL-USDT-SWAP": 93.1,
+   "XRP-USDT-SWAP": -5.3
+  },
+  "long_share_pct": 42.7906976744186
+ },
+ "buy_hold": {
+  "BTC-USDT-SWAP": {
+   "total_return_pct": -41.075709085490075,
+   "max_dd_pct": -46.964177923943126
+  },
+  "ETH-USDT-SWAP": {
+   "total_return_pct": -53.00627598853276,
+   "max_dd_pct": -59.86348734760782
+  },
+  "SOL-USDT-SWAP": {
+   "total_return_pct": -61.61236648596425,
+   "max_dd_pct": -66.88335908776043
+  },
+  "XRP-USDT-SWAP": {
+   "total_return_pct": -61.87148049043492,
+   "max_dd_pct": -63.821025539497136
+  },
+  "DOGE-USDT-SWAP": {
+   "total_return_pct": -68.54442545920547,
+   "max_dd_pct": -69.38808201623237
+  }
+ },
+ "verdict": "\u00c9CHEC"
+}

@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-18 (validation de la v0.1)
+> Dernière mise à jour : 2026-11-18 (test scellé de la v0.2)
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 : la version candidate v0.1 (S1b + S2b) a ÉCHOUÉ à la validation 2024–oct. 2025 (Sharpe 0,91, DD -24,6 %, PF 1,15), tout en restant gagnante (+35 %). Aucun ajustement fait après coup. Décision de la suite en attente de Maxime.**
+**Tâche 2 : aucune stratégie validée. v0.1 (S1b+S2b) a échoué à la validation 2024–2025 ; v0.2 (S2b, 1 % de risque, levier max 3x) a échoué au test scellé nov. 2025–nov. 2026 (-2,7 %, Sharpe 0,11, DD -31 %). Pas de déploiement. Toutes les données historiques ont servi : la prochaine preuve viendra du paper trading. Suite à décider avec Maxime.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -30,7 +30,7 @@ ils sont considérés comme validés (D-001 à D-004).
 | 4 | Premiers backtests | ✅ Vague 1 faite (2026-11-18) |
 | 5 | Comparaison des résultats | ✅ Vagues 1 et 2 (2026-11-18) |
 | 6 | Optimisation raisonnable | ✅ v0.1 figée (D-007) |
-| 7 | Validation statistique | ✗ v0.1 échoue (2026-11-18) — suite à décider |
+| 7 | Validation statistique | ✗ v0.1 (validation) et v0.2 (test scellé) échouent (2026-11-18) |
 | 8 | Présentation de la stratégie finale | ⬜ |
 | 9 | Validation par Maxime | ⬜ |
 | 10 | Développement du bot | ⬜ |
@@ -79,6 +79,13 @@ ils sont considérés comme validés (D-001 à D-004).
   6/8 trimestres positifs, coûts x2 : +13 %. S2b seule : Sharpe 1,19 ; S1b : 0,50. BTC perdant. Validation consommée :
   le seul juge neutre restant est le test scellé (nov. 2025 → nov. 2026).
 
+- Maxime (18/11, 15:30) : veut la stratégie la plus rentable, accepte le levier, délègue les choix à Claude.
+- Analyse du risque (`research/experiments/t2_risk_sizing.py`) : Kelly estimé ~4 %/trade (surestimé) ; choix 1 %.
+- X-Perps : BTC ~94 M$/jour, ETH ~22 M$/jour, 17–25 % de minutes sans échange, écart de prix p95 ~20 pb vs global.
+  Funding Binance 2020–2026 et OKX intégrés (funding réel signé dans le moteur).
+- Test scellé v0.2 (`docs/research/2026-11-18_T2_test_scelle_v0.2.md`) : ÉCHEC, -2,7 % dans une année où
+  les cryptos ont perdu 41 à 69 % ; shorts +9,8 %, longs -9,7 %.
+
 ## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
@@ -107,8 +114,8 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-Attendre la décision de Maxime sur la suite (options présentées le 18/11 : S2b seule à risque réduit jugée
-sur le test scellé, ou nouvelle recherche avant de toucher au test scellé). Vérifier la collecte relancée (X-Perps, funding).
+Décision de Maxime sur la suite : nouvelle famille de stratégies (tendance multi-jours sur un panier large,
+la plus robuste dans la littérature) jugée en paper trading, et/ou construction du bot en mode simulation.
 
 ## Journal des sessions
 
@@ -118,3 +125,4 @@ sur le test scellé, ou nouvelle recherche avant de toucher au test scellé). V�
 - 2026-11-18 — Vague 1 de backtests (4 stratégies, BTC/ETH, 2020–2023).
 - 2026-11-18 — Vague 2 (4 h, entrées limites, 5 actifs) ; correction de la collecte.
 - 2026-11-18 — Choix de Maxime : combinaison S1b+S2b ; pré-enregistrement D-007 ; validation 2024–2025 : échec aux critères.
+- 2026-11-18 — Délégation à Claude ; analyse du risque ; D-008 ; test scellé v0.2 : échec.
