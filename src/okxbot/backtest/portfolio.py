@@ -8,7 +8,7 @@ import pandas as pd
 
 
 def capped_portfolio(trades: pd.DataFrame, risk: float = 0.005, cap: float = 1.0, min_frac: float = 0.01,
-                     start: str | None = None, end: str | None = None) -> tuple[pd.Series, pd.DataFrame]:
+                     start: str | None = None, end: str | None = None, pos_cap: float = 1.0) -> tuple[pd.Series, pd.DataFrame]:
     """Rejoue les trades dans l'ordre chronologique. Chaque position vise `risk` du capital ; la somme des
     notionnels ouverts ne dépasse jamais `cap` x capital (la nouvelle position est réduite, ou ignorée si
     la place restante est < min_frac). Renvoie le capital quotidien (base 1) et les trades avec leur taille."""
@@ -28,7 +28,7 @@ def capped_portfolio(trades: pd.DataFrame, risk: float = 0.005, cap: float = 1.0
 
     for k in range(len(t)):
         close_until(t.at[k, "entry_time"])
-        want = min(risk / t.at[k, "risk_pct"], 1.0)
+        want = min(risk / t.at[k, "risk_pct"], pos_cap)
         room = cap - sum(open_frac.values())
         f = min(want, room)
         if f < min_frac:

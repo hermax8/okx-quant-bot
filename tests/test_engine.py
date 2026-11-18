@@ -177,3 +177,13 @@ def test_portfolio_cap_scales_new_positions():
     assert out["taken"].tolist() == [True, False, False]
     assert out["frac"].iloc[0] == pytest.approx(1.0)
     assert curve.iloc[-1] == pytest.approx(1.01)
+
+
+def test_real_funding_signed():
+    closes = np.r_[np.full(15, 100.0), np.full(45, 100.0)]
+    fine = fine_from_closes(closes)
+    fund = pd.Series([0.001, 0.002], index=pd.DatetimeIndex([fine.index[20], fine.index[40]]))
+    c = Costs(0, 0, 0, 0, 0.0001)
+    long_ = engine.run(fine, sig_on_15m(fine, {0: 1}, stop=50, max_hold=3), c, funding=fund).iloc[0]
+    short = engine.run(fine, sig_on_15m(fine, {0: -1}, stop=50, max_hold=3), c, funding=fund).iloc[0]
+    assert long_["net"] == pytest.approx(-0.003) and short["net"] == pytest.approx(0.003)

@@ -144,7 +144,7 @@ def _simulate(fo, fh, fl, fc, b_start, b_end, close, entry, stop_dist, tp_dist, 
     return t_ein[:n], t_eout[:n], t_dir[:n], t_pin[:n], t_pout[:n], t_risk[:n], t_reason[:n], t_bin[:n], t_maker[:n]
 
 
-def run(fine: pd.DataFrame, sig: Signals, costs: Costs = Costs()) -> pd.DataFrame:
+def run(fine: pd.DataFrame, sig: Signals, costs: Costs = Costs(), funding: pd.Series | None = None) -> pd.DataFrame:
     """Renvoie la liste des trades (rendements nets, en fraction du notionnel)."""
     fts = fine.index.as_unit("ns").asi8   # même unité pour tout (les Parquet sont en ms)
     bts = sig.index.as_unit("ns").asi8
@@ -169,7 +169,16 @@ def run(fine: pd.DataFrame, sig: Signals, costs: Costs = Costs()) -> pd.DataFram
     hours = (t_out - t_in).total_seconds() / 3600
     gross = d * (pout / pin - 1)
     fee_in = np.where(maker, costs.fee_maker, costs.fee)
-    net = gross - fee_in - costs.fee - costs.funding_8h * hours / 8
+    if funding is None:
+        fund = costs.funding_8h * hours / 8          # hypothèse prudente : toujours payé
+    else:
+        # funding réel signé : une position longue paie un taux positif, une courte le reçoit
+        ft = funding.index.as_unit("ns").asi8
+        cs = np.r_[0.0, np.cumsum(funding.to_numpy())]
+        a = np.searchsorted(ft, t_in.as_unit("ns").asi8, side="right")
+        b = np.searchsorted(ft, t_out.as_unit("ns").asi8, side="right")
+        fund = d * (cs[b] - cs[a]) * (costs.funding_8h / 0.0001 if costs.funding_8h else 1.0)
+    net = gross - fee_in - costs.fee - fund
     tr = pd.DataFrame({"entry_time": t_in, "exit_time": t_out, "dir": d, "entry_px": pin, "exit_px": pout,
                        "risk_pct": risk, "reason": [EXIT_NAMES[int(r)] for r in reason], "hours": hours,
                        "gross": gross, "net": net, "maker_entry": maker})

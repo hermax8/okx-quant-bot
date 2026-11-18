@@ -11,3 +11,4 @@ Statuts : Proposée → Validée (par Maxime) → Remplacée.
 | D-005 | 2026-11-18 | Abandon de S3 (squeeze) et S4 (retour à la moyenne 15 min) après la vague 1 | Validée (2026-11-18) |
 | D-006 | 2026-11-18 | Vague 2 limitée à S1 et S2 : horizon plus long, entrées maker, combinaison, extension aux altcoins | Validée (2026-11-18) |
 | D-007 | 2026-11-18 | Version candidate v0.1 (S1b + S2b, 5 actifs, plafond 1x) figée avant validation — voir D-007_candidate_v0.1_preregistration.md | Validée (2026-11-18) |
+| D-008 | 2026-11-18 | v0.2 : S2b seule, 1 % de risque/trade, levier de compte max 3x, coûts X-Perps, funding réel ; critères du test scellé — voir D-008_v0.2_preregistration_test_scelle.md | Validée (2026-11-18) |
