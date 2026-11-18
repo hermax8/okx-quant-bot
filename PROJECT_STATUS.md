@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-18 (vague 2 de backtests)
+> Dernière mise à jour : 2026-11-18 (validation de la v0.1)
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 en cours : vague 2 terminée. Candidate : S2b momentum 4 h (Sharpe OOS 1,49, DD 12,5 %, rentable coûts x2), mais Deflated Sharpe 54 % sur 525 essais. Proposition : figer une version et la passer une seule fois sur la validation 2024–oct. 2025 (en attente de l'accord de Maxime).**
+**Tâche 2 : la version candidate v0.1 (S1b + S2b) a ÉCHOUÉ à la validation 2024–oct. 2025 (Sharpe 0,91, DD -24,6 %, PF 1,15), tout en restant gagnante (+35 %). Aucun ajustement fait après coup. Décision de la suite en attente de Maxime.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -29,8 +29,8 @@ ils sont considérés comme validés (D-001 à D-004).
 | 3 | Collecte des données | ✅ Fait (2026-11-18), complément X-Perps + funding Binance lancé |
 | 4 | Premiers backtests | ✅ Vague 1 faite (2026-11-18) |
 | 5 | Comparaison des résultats | ✅ Vagues 1 et 2 (2026-11-18) |
-| 6 | Optimisation raisonnable | ⏳ Version candidate à figer |
-| 7 | Validation statistique | ⬜ |
+| 6 | Optimisation raisonnable | ✅ v0.1 figée (D-007) |
+| 7 | Validation statistique | ✗ v0.1 échoue (2026-11-18) — suite à décider |
 | 8 | Présentation de la stratégie finale | ⬜ |
 | 9 | Validation par Maxime | ⬜ |
 | 10 | Développement du bot | ⬜ |
@@ -75,6 +75,10 @@ ils sont considérés comme validés (D-001 à D-004).
 - Collecte : bug de récupération de la branche data corrigé (erreur 128) ; journaux d'erreur publiés.
   Les X-Perps montrent des minutes à volume nul : liquidité à mesurer.
 
+- Validation v0.1 (`docs/research/2026-11-18_T2_validation_v0.1.md`) : +35,1 %, Sharpe 0,91, DD -24,6 %, PF 1,15,
+  6/8 trimestres positifs, coûts x2 : +13 %. S2b seule : Sharpe 1,19 ; S1b : 0,50. BTC perdant. Validation consommée :
+  le seul juge neutre restant est le test scellé (nov. 2025 → nov. 2026).
+
 ## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
@@ -103,9 +107,8 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-1. Vérifier la collecte relancée (X-Perps, funding Binance, journaux d'erreur sur la branche data).
-2. Avec l'accord de Maxime : figer la version candidate (S2b, éventuellement + S1b avec plafond d'exposition),
-   intégrer le funding réel, mesurer la liquidité des X-Perps, puis UNE passe sur la validation 2024–oct. 2025.
+Attendre la décision de Maxime sur la suite (options présentées le 18/11 : S2b seule à risque réduit jugée
+sur le test scellé, ou nouvelle recherche avant de toucher au test scellé). Vérifier la collecte relancée (X-Perps, funding).
 
 ## Journal des sessions
 
@@ -114,3 +117,4 @@ il vérifie le résultat via la branche `data`.
 - 2026-11-18 — Vérification de la première collecte, ajout X-Perps et funding Binance.
 - 2026-11-18 — Vague 1 de backtests (4 stratégies, BTC/ETH, 2020–2023).
 - 2026-11-18 — Vague 2 (4 h, entrées limites, 5 actifs) ; correction de la collecte.
+- 2026-11-18 — Choix de Maxime : combinaison S1b+S2b ; pré-enregistrement D-007 ; validation 2024–2025 : échec aux critères.

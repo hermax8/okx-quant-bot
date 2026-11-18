@@ -7,13 +7,13 @@ import numpy as np
 from scipy import stats
 
 
-def deflated_sharpe(daily_ret: np.ndarray, sr_trials: np.ndarray) -> dict:
+def deflated_sharpe(daily_ret: np.ndarray, sr_trials: np.ndarray, n_trials: int | None = None) -> dict:
     """DSR de Bailey & López de Prado (2014). Sharpe en unités quotidiennes (non annualisées).
     sr_trials : Sharpe quotidien de TOUS les essais réalisés (pour estimer la barre de chance)."""
     r = np.asarray(daily_ret, float)
     t = len(r)
     sr = r.mean() / r.std(ddof=1) if r.std(ddof=1) > 0 else 0.0
-    n = max(len(sr_trials), 2)
+    n = max(n_trials or len(sr_trials), 2)
     v = np.var(sr_trials, ddof=1) if len(sr_trials) > 1 else 0.0
     g = 0.5772156649
     sr0 = np.sqrt(v) * ((1 - g) * stats.norm.ppf(1 - 1 / n) + g * stats.norm.ppf(1 - 1 / (n * np.e)))

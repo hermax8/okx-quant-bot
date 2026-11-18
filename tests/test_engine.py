@@ -163,3 +163,17 @@ def test_second_wave_no_lookahead(name):
     m = len(part.index) - 2
     assert np.array_equal(full.entry[:m], part.entry[:m])
     np.testing.assert_allclose(np.nan_to_num(full.limit_px[:m]), np.nan_to_num(part.limit_px[:m]))
+
+
+def test_portfolio_cap_scales_new_positions():
+    from okxbot.backtest.portfolio import capped_portfolio
+    t0 = pd.Timestamp("2021-01-01", tz="UTC")
+    tr = pd.DataFrame({
+        "entry_time": [t0, t0 + pd.Timedelta(hours=1), t0 + pd.Timedelta(hours=2)],
+        "exit_time": [t0 + pd.Timedelta(hours=10)] * 3,
+        "risk_pct": [0.005, 0.005, 0.005],      # chaque position voudrait 1x le capital
+        "net": [0.01, 0.01, 0.01]})
+    curve, out = capped_portfolio(tr, risk=0.005, cap=1.0)
+    assert out["taken"].tolist() == [True, False, False]
+    assert out["frac"].iloc[0] == pytest.approx(1.0)
+    assert curve.iloc[-1] == pytest.approx(1.01)
