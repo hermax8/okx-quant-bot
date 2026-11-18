@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-18 (T3 tendance multi-jours)
+> Dernière mise à jour : 2026-11-18 (bot en simulation)
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 : aucune stratégie validée après 3 familles (intraday, 4 h, tendance multi-jours T3 sur 20 cryptos : Sharpe 0,49, DD -58 %). Pas de déploiement. Prochaine piste proposée à Maxime : stratégies neutres au marché (portage du funding), et bot en mode simulation.**
+**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). En attente : secrets Telegram à ajouter par Maxime.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -33,10 +33,10 @@ ils sont considérés comme validés (D-001 à D-004).
 | 7 | Validation statistique | ✗ v0.1 (validation) et v0.2 (test scellé) échouent (2026-11-18) |
 | 8 | Présentation de la stratégie finale | ⬜ |
 | 9 | Validation par Maxime | ⬜ |
-| 10 | Développement du bot | ⬜ |
-| 11 | Connexion Telegram | ⬜ |
+| 10 | Développement du bot | ⏳ Version simulation (D-011), 35 tests |
+| 11 | Connexion Telegram | ⏳ Code prêt, secrets à ajouter |
 | 12 | Connexion OKX | ⬜ |
-| 13 | Paper trading | ⬜ |
+| 13 | Paper trading | ⏳ Démarre au prochain créneau de 4 h |
 | 14 | Validation en conditions réelles simulées | ⬜ |
 | 15 | Passage progressif au réel (après autorisation) | ⬜ |
 
@@ -122,9 +122,9 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-Décision de Maxime : (a) piste neutre au marché (portage du funding : long spot / short X-Perp quand le funding
-est positif, levier modéré), à pré-enregistrer puis tester ; (b) construction du bot en mode simulation
-(GitHub Actions + Telegram) indépendante de la stratégie.
+1. Maxime : créer un bot Telegram dédié et ajouter les secrets `TELEGRAM_BOT_TOKEN` et `TELEGRAM_CHAT_ID` au dépôt.
+2. Claude : vérifier les premiers cycles sur la branche `paper`, corriger si besoin.
+3. Revue de la simulation chaque semaine ; bilan complet en février 2027.
 
 ## Journal des sessions
 
@@ -136,3 +136,4 @@ est positif, levier modéré), à pré-enregistrer puis tester ; (b) constructio
 - 2026-11-18 — Choix de Maxime : combinaison S1b+S2b ; pré-enregistrement D-007 ; validation 2024–2025 : échec aux critères.
 - 2026-11-18 — Délégation à Claude ; analyse du risque ; D-008 ; test scellé v0.2 : échec.
 - 2026-11-18 — Accord multi-jours + simulation ; D-009 ; collecte U20 ; T3 : échec.
+- 2026-11-18 — D-010 portage C1 : échec de justesse ; D-011 bot en simulation (GitHub Actions + Telegram).

@@ -14,3 +14,4 @@ Statuts : Proposée → Validée (par Maxime) → Remplacée.
 | D-008 | 2026-11-18 | v0.2 : S2b seule, 1 % de risque/trade, levier de compte max 3x, coûts X-Perps, funding réel ; critères du test scellé — voir D-008_v0.2_preregistration_test_scelle.md | Validée (2026-11-18) |
 | D-009 | 2026-11-18 | Stratégie T3 tendance multi-jours long/short sur 20 cryptos, règles et critères figés avant calcul — voir D-009_tendance_multi_jours_preregistration.md | Validée (2026-11-18) |
 | D-010 | 2026-11-18 | Stratégie C1 portage du funding (spot long + X-Perp court), règles et critères figés avant calcul — voir D-010_portage_funding_preregistration.md | Validée (2026-11-18) |
+| D-011 | 2026-11-18 | Bot en simulation (T3 + C1 en observation, 1 000 € fictifs, GitHub Actions toutes les 4 h, Telegram) — voir D-011_bot_simulation.md | Validée (2026-11-18) |

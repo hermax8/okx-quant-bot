@@ -1,0 +1,58 @@
+# Bot de trading en SIMULATION (paper trading) — aucun ordre réel, aucune clé OKX utilisée.
+# Toutes les 4 heures : lit les commandes Telegram, met à jour les prix et le funding des X-Perps,
+# rééquilibre la poche tendance (1 fois par jour) et le portage (le lundi), envoie les notifications.
+# L'état (capital fictif, positions, historique) est conservé sur la branche `paper`.
+name: Paper trading (simulation)
+
+on:
+  schedule:
+    - cron: "23 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-trading
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Récupérer l'état de la simulation
+        run: |
+          mkdir -p state
+          if git ls-remote --exit-code --heads origin paper >/dev/null; then
+            git fetch --depth 1 origin +refs/heads/paper:refs/remotes/origin/paper
+            git show origin/paper:state/paper_state.json > state/paper_state.json || rm -f state/paper_state.json
+          fi
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Cycle de simulation
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m okxbot.live.runner --state state/paper_state.json
+      - name: Sauvegarder l'état sur la branche paper
+        if: always()
+        run: |
+          set -e
+          [ -f state/paper_state.json ] || exit 0
+          cp state/paper_state.json /tmp/paper_state.json
+          rm -f state/paper_state.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin paper >/dev/null; then
+            git checkout -B paper origin/paper
+          else
+            git checkout --orphan paper && git rm -rf . -q && printf "# Branche paper\n\nÉtat du bot en simulation. Ne pas fusionner.\n" > README.md
+          fi
+          git clean -fdq
+          mkdir -p state && cp /tmp/paper_state.json state/paper_state.json
+          git add -A
+          git commit -q -m "Simulation : cycle du $(date -u +%FT%H:%MZ)" || echo "rien à enregistrer"
+          git push origin paper
