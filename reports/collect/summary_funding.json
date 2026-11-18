@@ -1,25 +1,35 @@
 {
  "inst_id": "BTC-USDT-SWAP",
- "rows": 277,
- "first": "2026-08-17T16:00:00+00:00"
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
 }
 {
  "inst_id": "ETH-USDT-SWAP",
- "rows": 277,
+ "rows": 279,
  "first": "2026-08-17T16:00:00+00:00"
 }
 {
  "inst_id": "SOL-USDT-SWAP",
- "rows": 278,
+ "rows": 280,
  "first": "2026-08-17T08:00:00+00:00"
 }
 {
  "inst_id": "XRP-USDT-SWAP",
- "rows": 278,
+ "rows": 280,
  "first": "2026-08-17T08:00:00+00:00"
 }
 {
  "inst_id": "DOGE-USDT-SWAP",
- "rows": 277,
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "BTC-USD_UM_XPERP-310404",
+ "rows": 280,
+ "first": "2026-08-17T08:00:00+00:00"
+}
+{
+ "inst_id": "ETH-USD_UM_XPERP-310404",
+ "rows": 279,
  "first": "2026-08-17T16:00:00+00:00"
 }

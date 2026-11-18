@@ -1,9 +1,9 @@
 {
  "inst_id": "SOL-USDT-SWAP",
  "bar": "5m",
- "rows": 612187,
+ "rows": 612366,
  "first": "2021-01-22T06:55:00+00:00",
- "last": "2026-11-17T22:25:00+00:00",
+ "last": "2026-11-18T13:20:00+00:00",
  "coverage_pct": 100.0,
  "duplicates": 0,
  "n_gaps": 0,

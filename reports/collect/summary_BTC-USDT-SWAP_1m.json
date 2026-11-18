@@ -1,9 +1,9 @@
 {
  "inst_id": "BTC-USDT-SWAP",
  "bar": "1m",
- "months": 83,
- "skipped": 0,
- "rows": 3618629,
+ "months": 1,
+ "skipped": 82,
+ "rows": 25287,
  "empty_months": [],
- "requests": 36220
+ "requests": 253
 }

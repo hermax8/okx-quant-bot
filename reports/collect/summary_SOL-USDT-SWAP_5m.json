@@ -1,9 +1,9 @@
 {
  "inst_id": "SOL-USDT-SWAP",
  "bar": "5m",
- "months": 71,
- "skipped": 0,
- "rows": 612187,
+ "months": 1,
+ "skipped": 70,
+ "rows": 5057,
  "empty_months": [
   "2020-01",
   "2020-02",
@@ -18,5 +18,5 @@
   "2020-11",
   "2020-12"
  ],
- "requests": 6180
+ "requests": 63
 }

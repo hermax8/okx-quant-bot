@@ -1,12 +1,12 @@
 {
  "global": {
-  "SPOT": 1242,
-  "SWAP": 544,
+  "SPOT": 1248,
+  "SWAP": 547,
   "FUTURES": 293
  },
  "eea": {
-  "SPOT": 1238,
-  "SWAP": 544,
+  "SPOT": 1242,
+  "SWAP": 547,
   "FUTURES": 293
  }
 }

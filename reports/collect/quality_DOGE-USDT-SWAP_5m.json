@@ -1,9 +1,9 @@
 {
  "inst_id": "DOGE-USDT-SWAP",
  "bar": "5m",
- "rows": 668682,
+ "rows": 668858,
  "first": "2020-07-10T03:15:00+00:00",
- "last": "2026-11-17T22:40:00+00:00",
+ "last": "2026-11-18T13:20:00+00:00",
  "coverage_pct": 100.0,
  "duplicates": 0,
  "n_gaps": 0,

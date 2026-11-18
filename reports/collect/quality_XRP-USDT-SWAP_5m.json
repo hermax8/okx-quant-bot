@@ -1,9 +1,9 @@
 {
  "inst_id": "XRP-USDT-SWAP",
  "bar": "5m",
- "rows": 723726,
+ "rows": 723905,
  "first": "2020-01-01T00:00:00+00:00",
- "last": "2026-11-17T22:25:00+00:00",
+ "last": "2026-11-18T13:20:00+00:00",
  "coverage_pct": 100.0,
  "duplicates": 0,
  "n_gaps": 0,
