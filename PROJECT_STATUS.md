@@ -1,7 +1,7 @@
 # PROJECT_STATUS — Bot de trading intraday OKX
 
 > Fichier central de suivi. À lire en premier à chaque nouvelle session.
-> Dernière mise à jour : 2026-11-18 (test scellé de la v0.2)
+> Dernière mise à jour : 2026-11-18 (T3 tendance multi-jours)
 
 ## Objectif
 
@@ -12,7 +12,7 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Tâche 2 : aucune stratégie validée. v0.1 (S1b+S2b) a échoué à la validation 2024–2025 ; v0.2 (S2b, 1 % de risque, levier max 3x) a échoué au test scellé nov. 2025–nov. 2026 (-2,7 %, Sharpe 0,11, DD -31 %). Pas de déploiement. Toutes les données historiques ont servi : la prochaine preuve viendra du paper trading. Suite à décider avec Maxime.**
+**Tâche 2 : aucune stratégie validée après 3 familles (intraday, 4 h, tendance multi-jours T3 sur 20 cryptos : Sharpe 0,49, DD -58 %). Pas de déploiement. Prochaine piste proposée à Maxime : stratégies neutres au marché (portage du funding), et bot en mode simulation.**
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -86,6 +86,11 @@ ils sont considérés comme validés (D-001 à D-004).
 - Test scellé v0.2 (`docs/research/2026-11-18_T2_test_scelle_v0.2.md`) : ÉCHEC, -2,7 % dans une année où
   les cryptos ont perdu 41 à 69 % ; shorts +9,8 %, longs -9,7 %.
 
+- Maxime (18/11, 15:54) : accord pour positions multi-jours long/short et bot en simulation.
+- Collecte du panier U20 (bougies 4 h + funding Binance) réussie.
+- T3 (`docs/research/2026-11-18_T3_tendance_multi_jours.md`) : règles figées D-009, ÉCHEC (3/6 années positives,
+  DD -58 %, shorts perdants sur la période complète, +20 % sur les 12 derniers mois).
+
 ## Décisions (voir docs/decisions/)
 
 - D-001 Marché : OKX Europe, X-Perps en levier x1 (long + short), BTC et ETH en priorité.
@@ -114,8 +119,9 @@ il vérifie le résultat via la branche `data`.
 
 ## Prochaine action
 
-Décision de Maxime sur la suite : nouvelle famille de stratégies (tendance multi-jours sur un panier large,
-la plus robuste dans la littérature) jugée en paper trading, et/ou construction du bot en mode simulation.
+Décision de Maxime : (a) piste neutre au marché (portage du funding : long spot / short X-Perp quand le funding
+est positif, levier modéré), à pré-enregistrer puis tester ; (b) construction du bot en mode simulation
+(GitHub Actions + Telegram) indépendante de la stratégie.
 
 ## Journal des sessions
 
@@ -126,3 +132,4 @@ la plus robuste dans la littérature) jugée en paper trading, et/ou constructio
 - 2026-11-18 — Vague 2 (4 h, entrées limites, 5 actifs) ; correction de la collecte.
 - 2026-11-18 — Choix de Maxime : combinaison S1b+S2b ; pré-enregistrement D-007 ; validation 2024–2025 : échec aux critères.
 - 2026-11-18 — Délégation à Claude ; analyse du risque ; D-008 ; test scellé v0.2 : échec.
+- 2026-11-18 — Accord multi-jours + simulation ; D-009 ; collecte U20 ; T3 : échec.
