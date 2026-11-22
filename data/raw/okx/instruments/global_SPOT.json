@@ -747,18 +747,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "AUD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795056120000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -1697,18 +1691,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.01",
+  "tickSz": "0.001",
   "tradeQuoteCcyList": [
    "BRL"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795056360000",
-    "newValue": "0.001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -5959,19 +5947,13 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "EURC",
    "EUR"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795054320000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -6145,19 +6127,13 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "EURC",
    "EUR"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795140000000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -15031,19 +15007,13 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [
    "EURC",
    "EUR"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795141560000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -16177,19 +16147,13 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "EURC",
    "EUR"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795056000000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -17203,19 +17167,13 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "EURC",
    "EUR"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795055160000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -17275,7 +17233,13 @@
    "EUR"
   ],
   "uly": "",
-  "upcChg": []
+  "upcChg": [
+   {
+    "effTime": "1795399560000",
+    "newValue": "0.0001",
+    "param": "tickSz"
+   }
+  ]
  },
  {
   "alias": "",
@@ -20285,18 +20249,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "TRY"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795054920000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -20348,18 +20306,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "TRY"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795140360000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -24857,18 +24809,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.1",
+  "tickSz": "0.01",
   "tradeQuoteCcyList": [
    "TRY"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795054800000",
-    "newValue": "0.01",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -25832,18 +25778,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.0001",
+  "tickSz": "0.00001",
   "tradeQuoteCcyList": [
    "TRY"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795140960000",
-    "newValue": "0.00001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -30379,18 +30319,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795055880000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -30562,18 +30496,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795142880000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -33518,18 +33446,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.0001",
+  "tickSz": "0.00001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795053600000",
-    "newValue": "0.00001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -40191,18 +40113,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795141920000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -41377,18 +41293,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795055760000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -43458,6 +43368,65 @@
  {
   "alias": "",
   "auctionEndTime": "",
+  "baseCcy": "XANT",
+  "category": "1",
+  "contTdSwTime": "1795116600000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XANT-USDT",
+  "instIdCode": 571762,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795113000000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.00001",
+  "maxIcebergSz": "9999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "9999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "9999999999999.0000000000000000",
+  "maxTwapSz": "9999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.01",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.01",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
   "baseCcy": "XAPP",
   "category": "1",
   "contTdSwTime": "1786699800000",
@@ -44751,7 +44720,13 @@
    "USDT"
   ],
   "uly": "",
-  "upcChg": []
+  "upcChg": [
+   {
+    "effTime": "1795400040000",
+    "newValue": "0.0001",
+    "param": "tickSz"
+   }
+  ]
  },
  {
   "alias": "",
@@ -47824,6 +47799,65 @@
  {
   "alias": "",
   "auctionEndTime": "",
+  "baseCcy": "XKSTR",
+  "category": "1",
+  "contTdSwTime": "1795075200000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XKSTR-USDT",
+  "instIdCode": 569600,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795071600000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.0001",
+  "maxIcebergSz": "99999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "99999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "99999999999999.0000000000000000",
+  "maxTwapSz": "99999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.1",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.001",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
   "baseCcy": "XLITE",
   "category": "1",
   "contTdSwTime": "1784190600000",
@@ -48355,6 +48389,65 @@
  {
   "alias": "",
   "auctionEndTime": "",
+  "baseCcy": "XMINIMAX",
+  "category": "1",
+  "contTdSwTime": "1795071600000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XMINIMAX-USDT",
+  "instIdCode": 569598,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795068000000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.0001",
+  "maxIcebergSz": "99999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "99999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "99999999999999.0000000000000000",
+  "maxTwapSz": "99999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.1",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.001",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
   "baseCcy": "XMP",
   "category": "1",
   "contTdSwTime": "1794556800000",
@@ -48759,6 +48852,65 @@
   "state": "live",
   "stk": "",
   "tickSz": "0.01",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
+  "baseCcy": "XMSTU",
+  "category": "1",
+  "contTdSwTime": "1795077000000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XMSTU-USDT",
+  "instIdCode": 569601,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795073400000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.0001",
+  "maxIcebergSz": "99999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "99999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "99999999999999.0000000000000000",
+  "maxTwapSz": "99999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.1",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
@@ -51069,6 +51221,65 @@
  {
   "alias": "",
   "auctionEndTime": "",
+  "baseCcy": "XSECZ",
+  "category": "1",
+  "contTdSwTime": "1795078800000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XSECZ-USDT",
+  "instIdCode": 569602,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795075200000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.0001",
+  "maxIcebergSz": "99999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "99999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "99999999999999.0000000000000000",
+  "maxTwapSz": "99999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.1",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.0001",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
   "baseCcy": "XSHAZ",
   "category": "1",
   "contTdSwTime": "1786701600000",
@@ -51708,18 +51919,12 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.1",
+  "tickSz": "0.01",
   "tradeQuoteCcyList": [
    "USDT"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795069800000",
-    "newValue": "0.01",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -52541,6 +52746,65 @@
   "state": "live",
   "stk": "",
   "tickSz": "0.01",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
+  "baseCcy": "XTLT",
+  "category": "1",
+  "contTdSwTime": "1795080600000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XTLT-USDT",
+  "instIdCode": 569603,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795077000000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.00001",
+  "maxIcebergSz": "9999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "9999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "9999999999999.0000000000000000",
+  "maxTwapSz": "9999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.01",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
@@ -54134,6 +54398,65 @@
   "state": "live",
   "stk": "",
   "tickSz": "0.01",
+  "tradeQuoteCcyList": [
+   "USDT"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
+  "baseCcy": "XZHONGJI",
+  "category": "1",
+  "contTdSwTime": "1795073400000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XZHONGJI-USDT",
+  "instIdCode": 569599,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795069800000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.00001",
+  "maxIcebergSz": "9999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "9999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "9999999999999.0000000000000000",
+  "maxTwapSz": "9999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.01",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDT",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.001",
   "tradeQuoteCcyList": [
    "USDT"
   ],
@@ -59231,7 +59554,7 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "USDG",
    "USD",
@@ -59239,13 +59562,7 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795055280000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -59423,7 +59740,7 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [
    "USDG",
    "USD",
@@ -59431,13 +59748,7 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795141440000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -68729,7 +69040,7 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [
    "USDG",
    "USD",
@@ -68737,13 +69048,7 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795140120000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -69913,7 +70218,7 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [
    "USDG",
    "USD",
@@ -69921,13 +70226,7 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795054560000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -70986,6 +71285,68 @@
  {
   "alias": "",
   "auctionEndTime": "",
+  "baseCcy": "XANT",
+  "category": "1",
+  "contTdSwTime": "1795116600000",
+  "ctMult": "",
+  "ctType": "",
+  "ctVal": "",
+  "ctValCcy": "",
+  "expTime": "",
+  "floatPxLmtPct": "0.01",
+  "freq": "",
+  "futureSettlement": false,
+  "groupId": "12",
+  "initPxLmtPct": "0.02",
+  "instCategory": "3",
+  "instFamily": "",
+  "instId": "XANT-USDC",
+  "instIdCode": 571781,
+  "instType": "SPOT",
+  "lever": "",
+  "listTime": "1795113000000",
+  "longPosRemainingQuota": "",
+  "lotSz": "0.00001",
+  "maxIcebergSz": "9999999999999.0000000000000000",
+  "maxLmtAmt": "20000000",
+  "maxLmtSz": "9999999999999",
+  "maxMktAmt": "1000000",
+  "maxMktSz": "1000000",
+  "maxPlatOICoinLmt": "",
+  "maxPlatOILmt": "",
+  "maxPxLmtPct": "0.02",
+  "maxStopSz": "1000000",
+  "maxTriggerSz": "9999999999999.0000000000000000",
+  "maxTwapSz": "9999999999999.0000000000000000",
+  "method": "",
+  "minSz": "0.01",
+  "openType": "pre_quote",
+  "optType": "",
+  "posLmtAmt": "",
+  "posLmtPct": "",
+  "preMktSwTime": "",
+  "quoteCcy": "USDC",
+  "rpiMinLevel": "2",
+  "rpiMinPxBand": "20",
+  "ruleType": "normal",
+  "seriesId": "",
+  "settleCcy": "",
+  "shortPosRemainingQuota": "",
+  "state": "live",
+  "stk": "",
+  "tickSz": "0.01",
+  "tradeQuoteCcyList": [
+   "USDG",
+   "USD",
+   "USDC",
+   "RLUSD"
+  ],
+  "uly": "",
+  "upcChg": []
+ },
+ {
+  "alias": "",
+  "auctionEndTime": "",
   "baseCcy": "XASML",
   "category": "1",
   "contTdSwTime": "1793786400000",
@@ -71291,7 +71652,13 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": []
+  "upcChg": [
+   {
+    "effTime": "1795399800000",
+    "newValue": "0.0001",
+    "param": "tickSz"
+   }
+  ]
  },
  {
   "alias": "",
@@ -72678,7 +73045,7 @@
   "instId": "XSNDK-USDC",
   "instIdCode": 447417,
   "instType": "SPOT",
-  "lever": "",
+  "lever": "10",
   "listTime": "1788742800000",
   "longPosRemainingQuota": "",
   "lotSz": "0.000001",
@@ -72689,7 +73056,7 @@
   "maxMktSz": "1000000",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.02",
+  "maxPxLmtPct": "0.015",
   "maxStopSz": "1000000",
   "maxTriggerSz": "999999999999.0000000000000000",
   "maxTwapSz": "999999999999.0000000000000000",
@@ -72709,7 +73076,7 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.1",
+  "tickSz": "0.01",
   "tradeQuoteCcyList": [
    "USDG",
    "USD",
@@ -72717,13 +73084,7 @@
    "RLUSD"
   ],
   "uly": "",
-  "upcChg": [
-   {
-    "effTime": "1795069980000",
-    "newValue": "0.01",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -74304,358 +74665,6 @@
   "tradeQuoteCcyList": [
    "SOL"
   ],
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XZHONGJI-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795069800000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XMSTU-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795073400000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XMINIMAX-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795068000000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XKSTR-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795071600000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XANT-USDC",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795111200000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XTLT-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795077000000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XSECZ-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795075200000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
-  "uly": "",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "",
-  "ctType": "",
-  "ctVal": "",
-  "ctValCcy": "",
-  "expTime": "",
-  "floatPxLmtPct": "",
-  "futureSettlement": false,
-  "initPxLmtPct": "",
-  "instCategory": "",
-  "instFamily": "",
-  "instId": "XANT-USDT",
-  "instIdCode": null,
-  "instType": "SPOT",
-  "lever": "",
-  "listTime": "1795111200000",
-  "lotSz": "",
-  "maxIcebergSz": "",
-  "maxLmtAmt": "",
-  "maxLmtSz": "",
-  "maxMktAmt": "",
-  "maxMktSz": "",
-  "maxPxLmtPct": "",
-  "maxStopSz": "",
-  "maxTriggerSz": "",
-  "maxTwapSz": "",
-  "minSz": "",
-  "openType": "",
-  "optType": "",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "ruleType": "",
-  "settleCcy": "",
-  "state": "preopen",
-  "stk": "",
-  "tickSz": "",
   "uly": "",
   "upcChg": []
  }

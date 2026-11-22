@@ -865,7 +865,7 @@
   "ctVal": "1",
   "ctValCcy": "ANTHROPIC",
   "expTime": "",
-  "floatPxLmtPct": "0.025",
+  "floatPxLmtPct": "0.02",
   "freq": "",
   "futureSettlement": false,
   "groupId": "4",
@@ -875,7 +875,7 @@
   "instId": "ANTHROPIC-USDT-SWAP",
   "instIdCode": 270079,
   "instType": "SWAP",
-  "lever": "20",
+  "lever": "50",
   "listTime": "1778146200000",
   "longPosRemainingQuota": "",
   "lotSz": "0.001",
@@ -886,7 +886,7 @@
   "maxMktSz": "60",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.15",
+  "maxPxLmtPct": "0.03",
   "maxStopSz": "60",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -896,11 +896,11 @@
   "optType": "",
   "posLmtAmt": "250000",
   "posLmtPct": "30",
-  "preMktSwTime": "",
+  "preMktSwTime": "1795108884100",
   "quoteCcy": "",
   "rpiMinLevel": "2",
   "rpiMinPxBand": "20",
-  "ruleType": "pre_market",
+  "ruleType": "normal",
   "seriesId": "",
   "settleCcy": "USDT",
   "shortPosRemainingQuota": "",
@@ -6871,7 +6871,7 @@
   "maxMktSz": "47",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.0533",
+  "maxPxLmtPct": "0.0541",
   "maxStopSz": "47",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -7005,16 +7005,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [],
   "uly": "CHZ-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795054680000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -7473,16 +7467,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [],
   "uly": "CORE-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795143000000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -8417,7 +8405,7 @@
   "instId": "CXMT-USDT-SWAP",
   "instIdCode": 416078,
   "instType": "SWAP",
-  "lever": "10",
+  "lever": "20",
   "listTime": "1787035500000",
   "longPosRemainingQuota": "",
   "lotSz": "1",
@@ -10158,16 +10146,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.0001",
+  "tickSz": "0.00001",
   "tradeQuoteCcyList": [],
   "uly": "FARTCOIN-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795054440000",
-    "newValue": "0.00001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -11957,7 +11939,7 @@
   "instId": "H100-USDT-SWAP",
   "instIdCode": 490882,
   "instType": "SWAP",
-  "lever": "10",
+  "lever": "3",
   "listTime": "1790933400000",
   "longPosRemainingQuota": "",
   "lotSz": "1",
@@ -16642,7 +16624,7 @@
   "maxMktSz": "750",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0319",
   "maxStopSz": "750",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -22804,7 +22786,7 @@
   "maxMktSz": "990",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0361",
   "maxStopSz": "990",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -22827,63 +22809,6 @@
   "tickSz": "0.0001",
   "tradeQuoteCcyList": [],
   "uly": "RUM-USDT",
-  "upcChg": []
- },
- {
-  "alias": "",
-  "auctionEndTime": "",
-  "baseCcy": "",
-  "category": "1",
-  "contTdSwTime": "",
-  "ctMult": "1",
-  "ctType": "linear",
-  "ctVal": "10",
-  "ctValCcy": "RVN",
-  "expTime": "1795075200000",
-  "floatPxLmtPct": "0.015",
-  "freq": "",
-  "futureSettlement": false,
-  "groupId": "4",
-  "initPxLmtPct": "0.04",
-  "instCategory": "1",
-  "instFamily": "RVN-USDT",
-  "instId": "RVN-USDT-SWAP",
-  "instIdCode": 19722,
-  "instType": "SWAP",
-  "lever": "20",
-  "listTime": "1619161200000",
-  "longPosRemainingQuota": "",
-  "lotSz": "1",
-  "maxIcebergSz": "100000000.0000000000000000",
-  "maxLmtAmt": "20000000",
-  "maxLmtSz": "100000000",
-  "maxMktAmt": "",
-  "maxMktSz": "160000",
-  "maxPlatOICoinLmt": "",
-  "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.3",
-  "maxStopSz": "160000",
-  "maxTriggerSz": "100000000.0000000000000000",
-  "maxTwapSz": "100000000.0000000000000000",
-  "method": "",
-  "minSz": "1",
-  "openType": "fix_price",
-  "optType": "",
-  "posLmtAmt": "250000",
-  "posLmtPct": "30",
-  "preMktSwTime": "",
-  "quoteCcy": "",
-  "rpiMinLevel": "2",
-  "rpiMinPxBand": "20",
-  "ruleType": "normal",
-  "seriesId": "",
-  "settleCcy": "USDT",
-  "shortPosRemainingQuota": "",
-  "state": "live",
-  "stk": "",
-  "tickSz": "0.000001",
-  "tradeQuoteCcyList": [],
-  "uly": "RVN-USDT",
   "upcChg": []
  },
  {
@@ -24420,16 +24345,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.1",
+  "tickSz": "0.01",
   "tradeQuoteCcyList": [],
   "uly": "SNDK-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795071600000",
-    "newValue": "0.01",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -24577,7 +24496,7 @@
   "maxMktSz": "25000",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0302",
   "maxStopSz": "25000",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -24882,16 +24801,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [],
   "uly": "SOPH-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795140480000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -24982,7 +24895,7 @@
   "maxMktSz": "2100",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0318",
   "maxStopSz": "2100",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -25974,7 +25887,13 @@
   "tickSz": "0.0001",
   "tradeQuoteCcyList": [],
   "uly": "SYRUP-USDT",
-  "upcChg": []
+  "upcChg": [
+   {
+    "effTime": "1795399320000",
+    "newValue": "0.00001",
+    "param": "tickSz"
+   }
+  ]
  },
  {
   "alias": "",
@@ -26712,16 +26631,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [],
   "uly": "TRUMP-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795053960000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",
@@ -27382,7 +27295,7 @@
   "maxMktSz": "42",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0338",
   "maxStopSz": "42",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -27770,7 +27683,7 @@
   "instId": "UNITREE-USDT-SWAP",
   "instIdCode": 417365,
   "instType": "SWAP",
-  "lever": "10",
+  "lever": "20",
   "listTime": "1787116500000",
   "longPosRemainingQuota": "",
   "lotSz": "0.01",
@@ -27895,7 +27808,7 @@
   "maxMktSz": "250",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.03",
+  "maxPxLmtPct": "0.0342",
   "maxStopSz": "250",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -30620,7 +30533,7 @@
   "instId": "ZHIPU-USDT-SWAP",
   "instIdCode": 329231,
   "instType": "SWAP",
-  "lever": "10",
+  "lever": "20",
   "listTime": "1782284400000",
   "longPosRemainingQuota": "",
   "lotSz": "0.01",
@@ -30677,7 +30590,7 @@
   "instId": "ZHONGJI-USDT-SWAP",
   "instIdCode": 451930,
   "instType": "SWAP",
-  "lever": "10",
+  "lever": "20",
   "listTime": "1788933600000",
   "longPosRemainingQuota": "",
   "lotSz": "0.01",
@@ -30765,16 +30678,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [],
   "uly": "ZIL-USDT",
-  "upcChg": [
-   {
-    "effTime": "1795143600000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "",

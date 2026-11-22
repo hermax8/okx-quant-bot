@@ -10,7 +10,7 @@
   "ctVal": "1",
   "ctValCcy": "ANTHROPIC",
   "expTime": "1946966400000",
-  "floatPxLmtPct": "0.025",
+  "floatPxLmtPct": "0.02",
   "freq": "",
   "futureSettlement": false,
   "groupId": "7",
@@ -20,7 +20,7 @@
   "instId": "ANTHROPIC-USD_UM_XPERP-310912",
   "instIdCode": 449521,
   "instType": "FUTURES",
-  "lever": "10",
+  "lever": "20",
   "listTime": "1788829200141",
   "longPosRemainingQuota": "",
   "lotSz": "0.001",
@@ -31,7 +31,7 @@
   "maxMktSz": "60",
   "maxPlatOICoinLmt": "",
   "maxPlatOILmt": "",
-  "maxPxLmtPct": "0.15",
+  "maxPxLmtPct": "0.03",
   "maxStopSz": "60",
   "maxTriggerSz": "100000000.0000000000000000",
   "maxTwapSz": "100000000.0000000000000000",
@@ -41,11 +41,11 @@
   "optType": "",
   "posLmtAmt": "250000",
   "posLmtPct": "30",
-  "preMktSwTime": "",
+  "preMktSwTime": "1795108500000",
   "quoteCcy": "",
   "rpiMinLevel": "2",
   "rpiMinPxBand": "20",
-  "ruleType": "pre_market",
+  "ruleType": "xperp",
   "seriesId": "",
   "settleCcy": "USD",
   "shortPosRemainingQuota": "",
@@ -1388,7 +1388,7 @@
   "instId": "SOL-USD_UM_XPERP-310404",
   "instIdCode": 255653,
   "instType": "FUTURES",
-  "lever": "50",
+  "lever": "40",
   "listTime": "1775017500279",
   "longPosRemainingQuota": "",
   "lotSz": "1",
@@ -5415,16 +5415,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.00001",
+  "tickSz": "0.000001",
   "tradeQuoteCcyList": [],
   "uly": "CORE-USD",
-  "upcChg": [
-   {
-    "effTime": "1795140240000",
-    "newValue": "0.000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "this_five_years",
@@ -13521,16 +13515,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.1",
+  "tickSz": "0.01",
   "tradeQuoteCcyList": [],
   "uly": "SNDK-USD",
-  "upcChg": [
-   {
-    "effTime": "1795071780000",
-    "newValue": "0.01",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "this_five_years",
@@ -13755,16 +13743,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [],
   "uly": "SOPH-USD",
-  "upcChg": [
-   {
-    "effTime": "1795143360000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "this_five_years",
@@ -14673,16 +14655,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.001",
+  "tickSz": "0.0001",
   "tradeQuoteCcyList": [],
   "uly": "TRUMP-USD",
-  "upcChg": [
-   {
-    "effTime": "1795055640000",
-    "newValue": "0.0001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "this_five_years",
@@ -16617,16 +16593,10 @@
   "shortPosRemainingQuota": "",
   "state": "live",
   "stk": "",
-  "tickSz": "0.000001",
+  "tickSz": "0.0000001",
   "tradeQuoteCcyList": [],
   "uly": "ZIL-USD",
-  "upcChg": [
-   {
-    "effTime": "1795143120000",
-    "newValue": "0.0000001",
-    "param": "tickSz"
-   }
-  ]
+  "upcChg": []
  },
  {
   "alias": "this_five_years",

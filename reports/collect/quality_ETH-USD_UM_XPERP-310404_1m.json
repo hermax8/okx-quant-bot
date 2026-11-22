@@ -1,16 +1,16 @@
 {
  "inst_id": "ETH-USD_UM_XPERP-310404",
  "bar": "1m",
- "rows": 333295,
+ "rows": 338789,
  "first": "2026-04-01T04:50:00+00:00",
- "last": "2026-11-18T15:44:00+00:00",
+ "last": "2026-11-22T11:18:00+00:00",
  "coverage_pct": 100.0,
  "duplicates": 0,
  "n_gaps": 0,
  "missing_bars": 0,
  "largest_gap_min": 0.0,
  "bad_ohlc": 0,
- "zero_volume_bars": 81826,
+ "zero_volume_bars": 81839,
  "max_abs_logret": 0.05427970078958566,
  "n_logret_over_10pct": 0
 }
