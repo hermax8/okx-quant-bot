@@ -1,0 +1,386 @@
+{
+ "version": 1,
+ "mode": "actif",
+ "peak_equity": 547.9701430871446,
+ "last_rebalance_day": null,
+ "positions": {},
+ "lever_set": [],
+ "orders": [
+  {
+   "actif": "AAVE",
+   "instId": "AAVE-USD_UM_XPERP-310704",
+   "side": "sell",
+   "sz": 1.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123aave0",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "ADA",
+   "instId": "ADA-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 13.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123ada1",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "ARB",
+   "instId": "ARB-USD_UM_XPERP-310815",
+   "side": "sell",
+   "sz": 2.7,
+   "reduce_only": false,
+   "clOrdId": "t320261123arb2",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "AVAX",
+   "instId": "AVAX-USD_UM_XPERP-310530",
+   "side": "sell",
+   "sz": 0.1,
+   "reduce_only": false,
+   "clOrdId": "t320261123avax3",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "BCH",
+   "instId": "BCH-USD_UM_XPERP-310530",
+   "side": "sell",
+   "sz": 10.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123bch4",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "BNB",
+   "instId": "BNB-USD_UM_XPERP-310523",
+   "side": "sell",
+   "sz": 3.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123bnb5",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "BTC",
+   "instId": "BTC-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 3.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123btc6",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "DOGE",
+   "instId": "DOGE-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 37.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123doge7",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "ETH",
+   "instId": "ETH-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 7.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123eth8",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "FIL",
+   "instId": "FIL-USD_UM_XPERP-310718",
+   "side": "sell",
+   "sz": 295.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123fil9",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "ICP",
+   "instId": "ICP-USD_UM_XPERP-310711",
+   "side": "sell",
+   "sz": 7.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123icp10",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "LINK",
+   "instId": "LINK-USD_UM_XPERP-310523",
+   "side": "sell",
+   "sz": 1.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123link11",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "LTC",
+   "instId": "LTC-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 3.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123ltc12",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "NEAR",
+   "instId": "NEAR-USD_UM_XPERP-310613",
+   "side": "sell",
+   "sz": 1.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123near13",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "OP",
+   "instId": "OP-USD_UM_XPERP-310815",
+   "side": "sell",
+   "sz": 202.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123op14",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "PEPE",
+   "instId": "PEPE-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 1.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123pepe15",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "SOL",
+   "instId": "SOL-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 18.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123sol16",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "SUI",
+   "instId": "SUI-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 25.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123sui17",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "UNI",
+   "instId": "UNI-USD_UM_XPERP-310718",
+   "side": "sell",
+   "sz": 2.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123uni18",
+   "ts": 1795438394212,
+   "envoye": false
+  },
+  {
+   "actif": "XRP",
+   "instId": "XRP-USD_UM_XPERP-310404",
+   "side": "sell",
+   "sz": 23.0,
+   "reduce_only": false,
+   "clOrdId": "t320261123xrp19",
+   "ts": 1795438394212,
+   "envoye": false
+  }
+ ],
+ "history": [
+  [
+   1795438373904,
+   547.9701430871446
+  ]
+ ],
+ "events": [],
+ "tg_offset": 0,
+ "last_plan": {
+  "jour": "2026-11-23",
+  "capital_utilise": 547.96,
+  "poids": {
+   "BTC": -0.031731642203108514,
+   "ETH": -0.022350998978307467,
+   "SOL": -0.023113183791134424,
+   "XRP": -0.03871524132267093,
+   "DOGE": -0.03782955697350113,
+   "PEPE": -0.005198329483253241,
+   "NEAR": -0.00449788523128727,
+   "UNI": -0.013701554236540708,
+   "SUI": -0.030685512246025892,
+   "AAVE": -0.017886868932563076,
+   "FIL": -0.02929045028640085,
+   "BNB": -0.027101138957452437,
+   "ADA": -0.03459456919743991,
+   "LINK": -0.021677648304850503,
+   "AVAX": -0.01800105376813927,
+   "BCH": -0.03780699967872018,
+   "LTC": -0.02443550430897496,
+   "ICP": -0.024457471906259704,
+   "ARB": -0.005597811821120579,
+   "OP": -0.02612551373200316
+  },
+  "ordres": [
+   {
+    "actif": "AAVE",
+    "instId": "AAVE-USD_UM_XPERP-310704",
+    "side": "sell",
+    "sz": 1.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "ADA",
+    "instId": "ADA-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 13.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "ARB",
+    "instId": "ARB-USD_UM_XPERP-310815",
+    "side": "sell",
+    "sz": 2.7,
+    "reduce_only": false
+   },
+   {
+    "actif": "AVAX",
+    "instId": "AVAX-USD_UM_XPERP-310530",
+    "side": "sell",
+    "sz": 0.1,
+    "reduce_only": false
+   },
+   {
+    "actif": "BCH",
+    "instId": "BCH-USD_UM_XPERP-310530",
+    "side": "sell",
+    "sz": 10.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "BNB",
+    "instId": "BNB-USD_UM_XPERP-310523",
+    "side": "sell",
+    "sz": 3.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "BTC",
+    "instId": "BTC-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 3.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "DOGE",
+    "instId": "DOGE-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 37.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "ETH",
+    "instId": "ETH-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 7.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "FIL",
+    "instId": "FIL-USD_UM_XPERP-310718",
+    "side": "sell",
+    "sz": 295.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "ICP",
+    "instId": "ICP-USD_UM_XPERP-310711",
+    "side": "sell",
+    "sz": 7.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "LINK",
+    "instId": "LINK-USD_UM_XPERP-310523",
+    "side": "sell",
+    "sz": 1.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "LTC",
+    "instId": "LTC-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 3.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "NEAR",
+    "instId": "NEAR-USD_UM_XPERP-310613",
+    "side": "sell",
+    "sz": 1.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "OP",
+    "instId": "OP-USD_UM_XPERP-310815",
+    "side": "sell",
+    "sz": 202.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "PEPE",
+    "instId": "PEPE-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 1.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "SOL",
+    "instId": "SOL-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 18.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "SUI",
+    "instId": "SUI-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 25.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "UNI",
+    "instId": "UNI-USD_UM_XPERP-310718",
+    "side": "sell",
+    "sz": 2.0,
+    "reduce_only": false
+   },
+   {
+    "actif": "XRP",
+    "instId": "XRP-USD_UM_XPERP-310404",
+    "side": "sell",
+    "sz": 23.0,
+    "reduce_only": false
+   }
+  ]
+ }
+}
