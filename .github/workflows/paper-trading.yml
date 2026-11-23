@@ -32,10 +32,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -e .
-      - name: Cycle de simulation
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Cycle de simulation (silencieux, Telegram réservé au bot réel)
         run: python -m okxbot.live.runner --state state/paper_state.json
       - name: Sauvegarder l'état sur la branche paper
         if: always()
@@ -46,8 +43,9 @@ jobs:
           rm -f state/paper_state.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git stash -u -q || true
           if git ls-remote --exit-code --heads origin paper >/dev/null; then
-            git checkout -B paper origin/paper
+            git checkout -f -B paper origin/paper
           else
             git checkout --orphan paper && git rm -rf . -q && printf "# Branche paper\n\nÉtat du bot en simulation. Ne pas fusionner.\n" > README.md
           fi

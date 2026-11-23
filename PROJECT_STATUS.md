@@ -12,7 +12,11 @@ Capital de départ indiqué : 1 000 €. Aucun levier sans validation.
 
 ## Étape actuelle
 
-**Aucune stratégie validée (4 familles : intraday, 4 h, tendance multi-jours T3, portage C1). Bot en SIMULATION construit et planifié (toutes les 4 h, 1 000 € fictifs, T3 + C1 en observation). Secrets Telegram ajoutés par Maxime (18/11 17:11). Premier cycle simulé OK (18/11, lancé à la main, message Telegram reçu ; T3 : 19 positions courtes + 1 longue, ~0,43x). **Maxime veut passer en réel vers le 25/11/2026** et faire toutes les améliorations possibles d'ici là.**
+**Aucune stratégie validée aux critères pré-enregistrés (4 familles testées). Maxime a décidé de passer en réel malgré tout (D-012).
+Bot RÉEL construit (23/11) : T3 seule sur les X-Perps, workflow `live-trading.yml` toutes les 4 h, mode « à blanc » tant que
+la variable LIVE_TRADING ≠ « oui ». En attente : clés OKX (secrets GitHub), variable BOT_CAPITAL_USD, puis lancement en
+mode vérification. Simulation `paper` désormais silencieuse (bug de sauvegarde corrigé).**
+
 Aucun backtest réalisé à ce stade. Aucune ligne de code de bot.
 
 Réponses de Maxime (2026-11-17, 23:15) : 1) d'accord pour passer par GitHub Actions ;
@@ -117,18 +121,15 @@ ils sont considérés comme validés (D-001 à D-004).
 
 ## Questions ouvertes pour Maxime
 
-Aucune pour l'instant. Note : Claude ne peut pas lire l'état des exécutions GitHub Actions (pas de jeton API) ;
-il vérifie le résultat via la branche `data`.
+- Montant de départ (conseillé : 150–200 €) et sous-compte OKX dédié (conseillé).
 
 ## Prochaine action
 
-Plan de la semaine avant le réel (questions posées à Maxime le 18/11 : montant, serveur à IP fixe, sous-compte OKX) :
-1. Module d'exécution réelle OKX Europe (requêtes signées, X-Perps, arrondis aux tailles minimales, identifiants
-   d'ordre uniques, réconciliation avec le compte, exécutions partielles) + mode « à blanc » en parallèle de la simulation.
-2. Stops de protection posés chez OKX (protègent même si le bot tombe).
-3. Hébergement à IP fixe (petit serveur) : une clé OKX avec droit de trading non liée à une IP est supprimée après 14 jours.
-4. Sous-compte OKX dédié au bot, clé Lecture + Trading, sans retrait, liée à l'IP du serveur.
-5. Telegram sur le vrai compte, alertes d'échec d'ordre ; puis tableau de bord et analyse bihebdomadaire.
+1. Maxime crée la clé API OKX (Lecture + Trading, SANS retrait, sans IP), ajoute les secrets OKX_API_KEY, OKX_API_SECRET,
+   OKX_API_PASSPHRASE et la variable BOT_CAPITAL_USD, lance « Live trading (réel) » à la main avec « verification » coché.
+2. Claude lit le journal de l'exécution (API GitHub) et le message Telegram de vérification.
+3. Si tout est bon : Maxime crée la variable LIVE_TRADING = oui.
+4. Ensuite : tableau de bord, analyse bihebdomadaire, rotation mensuelle de la clé (supprimée par OKX après 14 j sans usage si non liée à une IP).
 
 ## Journal des sessions
 
@@ -142,3 +143,4 @@ Plan de la semaine avant le réel (questions posées à Maxime le 18/11 : montan
 - 2026-11-18 — Accord multi-jours + simulation ; D-009 ; collecte U20 ; T3 : échec.
 - 2026-11-18 — D-010 portage C1 : échec de justesse ; D-011 bot en simulation (GitHub Actions + Telegram).
 - 2026-11-18 — Premier cycle simulé OK ; Maxime vise le réel dans une semaine.
+- 2026-11-23 — Bot réel (T3, X-Perps, à blanc par défaut, stops chez OKX, messages Telegram ouverture/fermeture seulement) ; correction de la sauvegarde de la simulation.

@@ -1,0 +1,75 @@
+# Bot RÉEL — stratégie T3 sur les X-Perps d'OKX Europe.
+# Tant que la variable de dépôt LIVE_TRADING ne vaut pas exactement « oui », AUCUN ordre n'est envoyé (mode à blanc).
+# Lancement manuel avec « verification » coché : connexion OKX, soldes, ordres prévus → un message Telegram, aucun ordre.
+name: Live trading (réel)
+
+on:
+  schedule:
+    - cron: "37 */4 * * *"
+  workflow_dispatch:
+    inputs:
+      verification:
+        description: "Vérification seulement (aucun ordre)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-trading
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Récupérer l'état du bot
+        run: |
+          mkdir -p state
+          if git ls-remote --exit-code --heads origin live >/dev/null; then
+            git fetch --depth 1 origin +refs/heads/live:refs/remotes/origin/live
+            git show origin/live:state/live_state.json > state/live_state.json || rm -f state/live_state.json
+          fi
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e .
+      - name: Cycle du bot
+        env:
+          OKX_API_KEY: ${{ secrets.OKX_API_KEY }}
+          OKX_API_SECRET: ${{ secrets.OKX_API_SECRET }}
+          OKX_API_PASSPHRASE: ${{ secrets.OKX_API_PASSPHRASE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BOT_CAPITAL_USD: ${{ vars.BOT_CAPITAL_USD }}
+          LIVE_TRADING: ${{ vars.LIVE_TRADING }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.verification }}" = "true" ]; then
+            python -m okxbot.live.real --state state/live_state.json --verification
+          elif [ -z "$OKX_API_KEY" ]; then
+            echo "Clés OKX absentes : bot réel non configuré, rien à faire."
+          else
+            python -m okxbot.live.real --state state/live_state.json
+          fi
+      - name: Sauvegarder l'état sur la branche live
+        if: always()
+        run: |
+          set -e
+          [ -f state/live_state.json ] || exit 0
+          cp state/live_state.json /tmp/live_state.json
+          rm -f state/live_state.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git stash -u -q || true
+          if git ls-remote --exit-code --heads origin live >/dev/null; then
+            git checkout -f -B live origin/live
+          else
+            git checkout --orphan live && git rm -rf . -q && printf "# Branche live\n\nÉtat du bot réel. Ne pas fusionner.\n" > README.md
+          fi
+          git clean -fdq
+          mkdir -p state && cp /tmp/live_state.json state/live_state.json
+          git add -A
+          git commit -q -m "Bot réel : cycle du $(date -u +%FT%H:%MZ)" || echo "rien à enregistrer"
+          git push origin live

@@ -16,3 +16,7 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 .pytest_cache/
+
+# Fichiers générés par pip install -e
+*.egg-info/
+state/
