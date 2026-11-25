@@ -5,8 +5,7 @@
 name: Paper trading (simulation)
 
 on:
-  schedule:
-    - cron: "23 */4 * * *"
+  # Simulation arrêtée le 25/11/2026 (bot réel en service) : lancement manuel uniquement.
   workflow_dispatch:
 
 permissions:
