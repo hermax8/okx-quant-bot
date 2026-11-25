@@ -1,7 +1,8 @@
 # Collecte des données de marché OKX (API publique, sans clé).
 # Les données sont publiées sur la branche orpheline `data` (jamais sur main).
 # - Lancement manuel (onglet Actions > Collect market data > Run workflow)
-# - Lancement automatique quand ce workflow ou le collecteur change sur main
+# (plus de lancement automatique à chaque push : trop coûteux en minutes)
+# Artefacts gardés 1 jour seulement : les données sont déjà publiées sur la branche data.
 # - Mise à jour automatique chaque dimanche à 03:17 UTC (le funding n'est disponible
 #   que sur une fenêtre récente : on l'accumule semaine après semaine).
 # Budget : ~430 min pour la première collecte, puis ~25 min par semaine
@@ -14,11 +15,6 @@ on:
       start:
         description: "Date de début (AAAA-MM-JJ)"
         default: "2020-01-01"
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/collect-data.yml"
-      - "src/okxbot/data/**"
   schedule:
     - cron: "17 3 * * 0"
 
@@ -85,7 +81,7 @@ jobs:
             summary_*.json
             quality_*.json
             log_*.txt
-          retention-days: 7
+          retention-days: 1
 
   candles_4h:
     # Panier élargi (D-009) : 20 cryptos disponibles en X-Perps, cotées avant juillet 2023, bougies 4 h
@@ -123,7 +119,7 @@ jobs:
             data/raw/binance
             summary_*.json
             log_*.txt
-          retention-days: 7
+          retention-days: 1
 
   reference:
     runs-on: ubuntu-latest
@@ -172,7 +168,7 @@ jobs:
             data/raw/okx/funding
             data/raw/binance
             summary_*.json
-          retention-days: 7
+          retention-days: 1
 
   publish:
     needs: [candles, candles_4h, reference]
