@@ -1,108 +1,108 @@
 {
  "version": 1,
  "mode": "actif",
- "peak_equity": 553.3039666301909,
- "last_rebalance_day": "2026-11-24",
+ "peak_equity": 557.3481615299175,
+ "last_rebalance_day": "2026-11-25",
  "positions": {
   "XRP": {
    "ct": -23.0,
    "avg": 0.9402,
-   "upl": 0.3887000000000006
+   "upl": 0.492200000000002
   },
   "UNI": {
    "ct": -2.0,
    "avg": 4.85,
-   "upl": 0.25
+   "upl": 0.6419999999999995
   },
   "SUI": {
    "ct": -25.0,
    "avg": 0.6732,
-   "upl": 0.6074999999999997
+   "upl": 0.8050000000000002
   },
   "SOL": {
    "ct": -18.0,
    "avg": 71.83,
-   "upl": 0.3545999999999998
+   "upl": 0.7452000000000001
   },
   "PEPE": {
    "ct": -1.0,
    "avg": 3.42e-06,
-   "upl": -0.0740000000000001
+   "upl": -0.04
   },
   "OP": {
    "ct": -208.0,
    "avg": 0.07032,
-   "upl": 0.3535999999999986
+   "upl": 0.4950399999999986
   },
   "NEAR": {
    "ct": -1.0,
    "avg": 2.988,
-   "upl": 0.1099999999999999
+   "upl": 0.133
   },
   "LTC": {
    "ct": -3.0,
    "avg": 41.45333333333333,
-   "upl": 0.1719999999999992
+   "upl": 0.2620000000000005
   },
   "LINK": {
    "ct": -1.0,
    "avg": 9.013,
-   "upl": 0.1549999999999994
+   "upl": 0.3040000000000003
   },
   "ICP": {
    "ct": -6.0,
    "avg": 2.061,
-   "upl": 0.3600000000000003
+   "upl": 0.6239999999999992
   },
   "FIL": {
    "ct": -280.0,
    "avg": 0.5540039285714285,
-   "upl": 0.3753100000000003
+   "upl": 0.6553100000000005
   },
   "ETH": {
    "ct": -7.0,
    "avg": 1705.58,
-   "upl": 0.1543499999999997
+   "upl": 0.4181800000000001
   },
   "DOGE": {
    "ct": -37.0,
    "avg": 0.05631,
-   "upl": 0.3514999999999998
+   "upl": 0.7659000000000009
   },
   "BTC": {
    "ct": -3.0,
    "avg": 61144.8,
-   "upl": 0.35985
+   "upl": 0.5895300000000018
   },
   "BNB": {
    "ct": -3.0,
    "avg": 555.7333333333333,
-   "upl": 0.2050000000000012
+   "upl": 0.4300000000000012
   },
   "BCH": {
    "ct": -11.0,
    "avg": 200.1,
-   "upl": 0.3079999999999982
+   "upl": 0.3959999999999994
   },
   "AVAX": {
    "ct": -0.1,
    "avg": 6.775,
-   "upl": 0.1779999999999999
+   "upl": 0.3040000000000003
   },
   "ARB": {
    "ct": -2.8,
    "avg": 0.11283,
-   "upl": 0.0663599999999999
+   "upl": 0.10528
   },
   "ADA": {
    "ct": -13.0,
    "avg": 0.1484,
-   "upl": 0.5070000000000019
+   "upl": 0.819
   },
   "AAVE": {
    "ct": -1.0,
    "avg": 97.25,
-   "upl": 0.2640000000000001
+   "upl": 0.5140000000000001
   }
  },
  "lever_set": [
@@ -765,176 +765,39 @@
   [
    1795560250227,
    553.3039666301909
+  ],
+  [
+   1795597424841,
+   557.3481615299175
   ]
  ],
  "events": [],
  "tg_offset": 0,
  "last_plan": {
-  "jour": "2026-11-24",
+  "jour": "2026-11-25",
   "capital_utilise": 547.96,
   "poids": {
-   "BTC": -0.03235506320989026,
-   "ETH": -0.022890702813218866,
-   "SOL": -0.023141923069267576,
-   "XRP": -0.039081787939907804,
-   "DOGE": -0.037799441284563945,
-   "PEPE": -0.005282328952531862,
-   "NEAR": -0.004600453688865493,
-   "UNI": -0.013717525033703075,
-   "SUI": -0.030595946721030862,
-   "AAVE": -0.01831438233241096,
-   "FIL": -0.028434682003948067,
-   "BNB": -0.02773875767168516,
-   "ADA": -0.0343920430275287,
-   "LINK": -0.02170926231123813,
-   "AVAX": -0.01823199190326704,
-   "BCH": -0.03846378974917587,
-   "LTC": -0.023655699922155743,
-   "ICP": -0.024033576470717348,
-   "ARB": -0.005732451000306507,
-   "OP": -0.026711119974591763
+   "BTC": -0.03207648972766949,
+   "ETH": -0.022943483635300167,
+   "SOL": -0.022877984478203675,
+   "XRP": -0.03916958686614797,
+   "DOGE": -0.03786580983912177,
+   "PEPE": -0.005275503492120841,
+   "NEAR": -0.0045965553978852755,
+   "UNI": -0.013747559032009488,
+   "SUI": -0.030297484368695678,
+   "AAVE": -0.018253704887931516,
+   "FIL": -0.028409588316416937,
+   "BNB": -0.02781689350417954,
+   "ADA": -0.034288684073950186,
+   "LINK": -0.021732444924795827,
+   "AVAX": -0.018149642917667273,
+   "BCH": -0.038588346593592074,
+   "LTC": -0.0237403269441248,
+   "ICP": -0.023993584526810656,
+   "ARB": -0.005750554195112098,
+   "OP": -0.026773451863773775
   },
-  "ordres": [
-   {
-    "actif": "AAVE",
-    "instId": "AAVE-USD_UM_XPERP-310704",
-    "side": "sell",
-    "sz": 1.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "ADA",
-    "instId": "ADA-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 13.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "ARB",
-    "instId": "ARB-USD_UM_XPERP-310815",
-    "side": "sell",
-    "sz": 2.8,
-    "reduce_only": false
-   },
-   {
-    "actif": "AVAX",
-    "instId": "AVAX-USD_UM_XPERP-310530",
-    "side": "sell",
-    "sz": 0.1,
-    "reduce_only": false
-   },
-   {
-    "actif": "BCH",
-    "instId": "BCH-USD_UM_XPERP-310530",
-    "side": "sell",
-    "sz": 11.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "BNB",
-    "instId": "BNB-USD_UM_XPERP-310523",
-    "side": "sell",
-    "sz": 3.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "BTC",
-    "instId": "BTC-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 3.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "DOGE",
-    "instId": "DOGE-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 37.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "ETH",
-    "instId": "ETH-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 7.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "FIL",
-    "instId": "FIL-USD_UM_XPERP-310718",
-    "side": "sell",
-    "sz": 280.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "ICP",
-    "instId": "ICP-USD_UM_XPERP-310711",
-    "side": "sell",
-    "sz": 6.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "LINK",
-    "instId": "LINK-USD_UM_XPERP-310523",
-    "side": "sell",
-    "sz": 1.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "LTC",
-    "instId": "LTC-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 3.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "NEAR",
-    "instId": "NEAR-USD_UM_XPERP-310613",
-    "side": "sell",
-    "sz": 1.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "OP",
-    "instId": "OP-USD_UM_XPERP-310815",
-    "side": "sell",
-    "sz": 208.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "PEPE",
-    "instId": "PEPE-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 1.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "SOL",
-    "instId": "SOL-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 18.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "SUI",
-    "instId": "SUI-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 25.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "UNI",
-    "instId": "UNI-USD_UM_XPERP-310718",
-    "side": "sell",
-    "sz": 2.0,
-    "reduce_only": false
-   },
-   {
-    "actif": "XRP",
-    "instId": "XRP-USD_UM_XPERP-310404",
-    "side": "sell",
-    "sz": 23.0,
-    "reduce_only": false
-   }
-  ]
+  "ordres": []
  }
 }
