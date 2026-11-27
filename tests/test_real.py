@@ -100,3 +100,24 @@ def test_stop_hit_notifies_close_and_killswitch():
     tg3 = FakeTG([{"update_id": 1, "message": {"chat": {"id": 42}, "text": "/killswitch"}}])
     st, tg3, _ = run(okx, live=True, st=st, tg=tg3, day="2026-11-24 08:37")
     assert all(c == 0 for c in okx.pos.values()) and okx.algos == [] and st["mode"] == "pause"
+
+
+def test_okx_retries_transient_outage(monkeypatch):
+    """Code 50001 (service indisponible) : on réessaie au lieu de planter le cycle."""
+    import okxbot.live.okx_private as op
+    monkeypatch.setattr(op.time, "sleep", lambda s: None)
+
+    class R:
+        def __init__(self, d): self.d = d
+        def json(self): return self.d
+
+    class S:
+        def __init__(self): self.n = 0
+        def request(self, *a, **k):
+            self.n += 1
+            return R({"code": "50001", "msg": "Service temporarily unavailable"} if self.n < 3
+                     else {"code": "0", "data": [{"acctLv": "2"}]})
+
+    s = S()
+    c = op.OkxPrivate("k", "s", "p", session=s)
+    assert c.config() == {"acctLv": "2"} and s.n == 3

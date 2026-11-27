@@ -20,6 +20,12 @@ log = logging.getLogger(__name__)
 EEA_HOST = "https://eea.okx.com"
 
 
+# Pannes passagères côté OKX : on réessaie au lieu d'abandonner le cycle.
+# 50011/50013 trop de requêtes / système occupé ; 50001 service indisponible ;
+# 50004 délai dépassé ; 50026 erreur système.
+TRANSIENT = {"50011", "50013", "50001", "50004", "50026"}
+
+
 class OkxError(RuntimeError):
     def __init__(self, path: str, code: str, msg: str, data=None):
         super().__init__(f"OKX {path} : code {code} — {msg} {data or ''}".strip())
@@ -36,7 +42,7 @@ def sign(secret: str, ts: str, method: str, path: str, body: str) -> str:
 
 
 class OkxPrivate:
-    def __init__(self, key: str, secret: str, passphrase: str, base: str = EEA_HOST, session=None, retries: int = 3):
+    def __init__(self, key: str, secret: str, passphrase: str, base: str = EEA_HOST, session=None, retries: int = 5):
         if not (key and secret and passphrase):
             raise ValueError("Clés OKX absentes (secrets OKX_API_KEY / OKX_API_SECRET / OKX_API_PASSPHRASE)")
         self.key, self.secret, self.passphrase, self.base = key, secret, passphrase, base.rstrip("/")
@@ -59,13 +65,17 @@ class OkxPrivate:
                 if attempt == self.retries:
                     raise
                 log.warning("Erreur réseau OKX (%s), nouvelle tentative", exc)
-                time.sleep(2 * attempt)
+                time.sleep(3 * 2 ** (attempt - 1))
                 continue
             code = str(d.get("code"))
             if code == "0":
                 return d.get("data", [])
-            if code in ("50011", "50013") and attempt < self.retries:   # trop de requêtes / système occupé
-                time.sleep(2 * attempt)
+            # Une écriture n'est réessayée que si elle porte un clOrdId (OKX refuse alors un doublon).
+            safe = method.upper() == "GET" or (isinstance(body, dict) and body.get("clOrdId"))
+            if code in TRANSIENT and safe and attempt < self.retries:
+                log.warning("OKX %s : code %s (%s), nouvelle tentative %d/%d", path, code,
+                            d.get("msg", ""), attempt + 1, self.retries)
+                time.sleep(3 * 2 ** (attempt - 1))      # 3, 6, 12, 24 s
                 continue
             raise OkxError(path, code, d.get("msg", ""), d.get("data"))
         return []
